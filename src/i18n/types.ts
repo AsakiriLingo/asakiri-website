@@ -14,7 +14,5 @@ export interface LandingMessages {
   comingSoon: string;
   githubLink: string;
   githubAriaLabel: string;
-  discordLink: string;
-  discordAriaLabel: string;
   footer: string;
 }

@@ -18,7 +18,5 @@ export const jaMessages = {
   comingSoon: "近日公開",
   githubLink: "GitHubで開発を見る",
   githubAriaLabel: "GitHubでAsakiri Studioを開く",
-  discordLink: "Discordに参加",
-  discordAriaLabel: "AsakiriのDiscordコミュニティに参加",
   footer: "独立したコース制作者のために。",
 } satisfies LandingMessages;

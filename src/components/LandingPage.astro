@@ -10,6 +10,7 @@ interface Props {
 const { locale, messages } = Astro.props;
 const githubUrl = "https://github.com/AsakiriLingo/asakiri-studio";
 const discordUrl = "https://discord.gg/X2W6NX7CNY";
+const patreonUrl = "https://www.patreon.com/asakiri";
 const homeUrl = locale === "ja" ? "/ja/" : "/";
 const alternateUrl = locale === "ja" ? "/" : "/ja/";
 const siteUrl = Astro.site ?? new URL("https://www.asakiri.com");
@@ -81,6 +82,9 @@ const structuredData = JSON.stringify({
 					<a class="header-community-link" href={discordUrl} target="_blank" rel="noopener noreferrer">
 						Discord <span aria-hidden="true">↗</span>
 					</a>
+					<a class="header-community-link" href={patreonUrl} target="_blank" rel="noopener noreferrer">
+						Patreon <span aria-hidden="true">↗</span>
+					</a>
 					<a class="header-community-link" href={githubUrl} target="_blank" rel="noopener noreferrer">
 						GitHub <span aria-hidden="true">↗</span>
 					</a>
@@ -95,9 +99,6 @@ const structuredData = JSON.stringify({
 						<p class="hero-description">{messages.description}</p>
 						<div class="hero-actions">
 							<span class="status"><span class="status-dot" aria-hidden="true"></span>{messages.comingSoon}</span>
-							<a class="discord-button" href={discordUrl} target="_blank" rel="noopener noreferrer" aria-label={messages.discordAriaLabel}>
-								{messages.discordLink} <span aria-hidden="true">↗</span>
-							</a>
 							<a class="github-button" href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={messages.githubAriaLabel}>
 								{messages.githubLink} <span aria-hidden="true">↗</span>
 							</a>
