@@ -1,0 +1,66 @@
+---
+import "../styles/global.css";
+import type { LandingMessages } from "../i18n/types";
+
+interface Props {
+  locale: "en" | "ja";
+  messages: LandingMessages;
+}
+
+const { locale, messages } = Astro.props;
+const githubUrl = "https://github.com/AsakiriLingo/asakiri-studio";
+const homeUrl = locale === "ja" ? "/ja/" : "/";
+const alternateUrl = locale === "ja" ? "/" : "/ja/";
+---
+
+<!doctype html>
+<html lang={locale}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={messages.description} />
+		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/png" href="/app-icon.png" />
+		<link rel="alternate" hreflang="en" href="/" />
+		<link rel="alternate" hreflang="ja" href="/ja/" />
+		<link rel="alternate" hreflang="x-default" href="/" />
+		<title>{messages.brand} | {messages.comingSoon}</title>
+	</head>
+	<body>
+		<div class="site-shell">
+			<header class="site-header">
+				<a class="brand" href={homeUrl} aria-label={messages.brand}>
+					<img class="brand-mark" src="/app-icon.png" alt="" width="36" height="36" />
+					<span>{messages.brand}</span>
+				</a>
+				<nav class="site-nav" aria-label={messages.languageSwitcherLabel}>
+					<a class="language-link" href={alternateUrl}>{messages.alternateLocaleName}</a>
+					<a class="header-github-link" href={githubUrl} target="_blank" rel="noreferrer">
+						GitHub <span aria-hidden="true">↗</span>
+					</a>
+				</nav>
+			</header>
+
+			<main>
+				<section class="hero" aria-labelledby="hero-title">
+					<div class="hero-content">
+						<p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{messages.eyebrow}</p>
+						<h1 id="hero-title">{messages.title}</h1>
+						<p class="hero-description">{messages.description}</p>
+						<div class="hero-actions">
+							<span class="status"><span class="status-dot" aria-hidden="true"></span>{messages.comingSoon}</span>
+							<a class="github-button" href={githubUrl} target="_blank" rel="noreferrer" aria-label={messages.githubAriaLabel}>
+								{messages.githubLink} <span aria-hidden="true">↗</span>
+							</a>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer class="site-footer">
+				<span>{messages.footer}</span>
+				<span>© {new Date().getFullYear()} {messages.brand}</span>
+			</footer>
+		</div>
+	</body>
+</html>
