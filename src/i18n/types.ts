@@ -6,7 +6,7 @@ export interface LandingMessages {
   };
   localeName: string;
   alternateLocaleName: string;
-  languageSwitcherLabel: string;
+  navigationLabel: string;
   brand: string;
   eyebrow: string;
   title: string;
@@ -14,5 +14,7 @@ export interface LandingMessages {
   comingSoon: string;
   githubLink: string;
   githubAriaLabel: string;
+  discordLink: string;
+  discordAriaLabel: string;
   footer: string;
 }

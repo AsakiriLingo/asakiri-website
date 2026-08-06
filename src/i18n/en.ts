@@ -9,7 +9,7 @@ export const enMessages = {
   },
   localeName: "English",
   alternateLocaleName: "日本語",
-  languageSwitcherLabel: "Switch language",
+  navigationLabel: "Primary navigation",
   brand: "Asakiri",
   eyebrow: "A local-first way to make language courses",
   title: "Language learning, made to stay yours.",
@@ -18,5 +18,7 @@ export const enMessages = {
   comingSoon: "Coming soon",
   githubLink: "Follow the project on GitHub",
   githubAriaLabel: "Open Asakiri Studio on GitHub",
+  discordLink: "Join the Discord",
+  discordAriaLabel: "Join the Asakiri Discord community",
   footer: "Made for independent course makers.",
 } satisfies LandingMessages;
