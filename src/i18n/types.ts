@@ -1,4 +1,9 @@
 export interface LandingMessages {
+  seo: {
+    title: string;
+    description: string;
+    imageAlt: string;
+  };
   localeName: string;
   alternateLocaleName: string;
   languageSwitcherLabel: string;

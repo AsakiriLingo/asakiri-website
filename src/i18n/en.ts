@@ -1,6 +1,12 @@
 import type { LandingMessages } from "./types";
 
 export const enMessages = {
+  seo: {
+    title: "Asakiri | Local-first language course editor",
+    description:
+      "Create thoughtful language courses with reusable content, rich media, and exercises in a calm, local-first editor that keeps your work under your control.",
+    imageAlt: "Asakiri, a local-first language course editor",
+  },
   localeName: "English",
   alternateLocaleName: "日本語",
   languageSwitcherLabel: "Switch language",

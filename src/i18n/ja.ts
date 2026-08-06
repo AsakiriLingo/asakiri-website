@@ -1,6 +1,12 @@
 import type { LandingMessages } from "./types";
 
 export const jaMessages = {
+  seo: {
+    title: "Asakiri | ローカルファーストの語学コースエディター",
+    description:
+      "Asakiriは、再利用できるコンテンツ、メディア、練習問題を使い、データを手元で管理しながら語学コースを作成できるローカルファーストのエディターです。",
+    imageAlt: "ローカルファーストの語学コースエディター、Asakiri",
+  },
   localeName: "日本語",
   alternateLocaleName: "English",
   languageSwitcherLabel: "言語を切り替える",

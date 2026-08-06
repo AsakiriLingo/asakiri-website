@@ -11,6 +11,23 @@ const { locale, messages } = Astro.props;
 const githubUrl = "https://github.com/AsakiriLingo/asakiri-studio";
 const homeUrl = locale === "ja" ? "/ja/" : "/";
 const alternateUrl = locale === "ja" ? "/" : "/ja/";
+const siteUrl = Astro.site ?? new URL("https://www.asakiri.com");
+const canonicalUrl = new URL(homeUrl, siteUrl);
+const englishUrl = new URL("/", siteUrl);
+const japaneseUrl = new URL("/ja/", siteUrl);
+const socialImage = locale === "ja"
+  ? { url: new URL("/og-ja.png", siteUrl), width: "3418", height: "1740" }
+  : { url: new URL("/og-image.png", siteUrl), width: "3410", height: "1732" };
+const ogLocale = locale === "ja" ? "ja_JP" : "en_US";
+const alternateOgLocale = locale === "ja" ? "en_US" : "ja_JP";
+const structuredData = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: messages.brand,
+  url: canonicalUrl.href,
+  description: messages.seo.description,
+  inLanguage: locale === "ja" ? "ja-JP" : "en-US",
+}).replace(/</g, "\\u003c");
 ---
 
 <!doctype html>
@@ -18,13 +35,38 @@ const alternateUrl = locale === "ja" ? "/" : "/ja/";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={messages.description} />
+		<meta name="description" content={messages.seo.description} />
+		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/png" href="/app-icon.png" />
-		<link rel="alternate" hreflang="en" href="/" />
-		<link rel="alternate" hreflang="ja" href="/ja/" />
-		<link rel="alternate" hreflang="x-default" href="/" />
-		<title>{messages.brand} | {messages.comingSoon}</title>
+		<link rel="canonical" href={canonicalUrl.href} />
+		<link rel="alternate" hreflang="en-US" href={englishUrl.href} />
+		<link rel="alternate" hreflang="ja-JP" href={japaneseUrl.href} />
+		<link rel="alternate" hreflang="x-default" href={englishUrl.href} />
+		<link rel="sitemap" href="/sitemap-index.xml" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content={messages.brand} />
+		<meta property="og:title" content={messages.seo.title} />
+		<meta property="og:description" content={messages.seo.description} />
+		<meta property="og:url" content={canonicalUrl.href} />
+		<meta property="og:locale" content={ogLocale} />
+		<meta property="og:locale:alternate" content={alternateOgLocale} />
+		<meta property="og:image" content={socialImage.url.href} />
+		<meta property="og:image:secure_url" content={socialImage.url.href} />
+		<meta property="og:image:type" content="image/png" />
+		<meta property="og:image:width" content={socialImage.width} />
+		<meta property="og:image:height" content={socialImage.height} />
+		<meta property="og:image:alt" content={messages.seo.imageAlt} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={messages.seo.title} />
+		<meta name="twitter:description" content={messages.seo.description} />
+		<meta name="twitter:image" content={socialImage.url.href} />
+		<meta name="twitter:image:alt" content={messages.seo.imageAlt} />
+
+		<script type="application/ld+json" set:html={structuredData} />
+		<title>{messages.seo.title}</title>
 	</head>
 	<body>
 		<div class="site-shell">
