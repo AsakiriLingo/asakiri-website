@@ -1,0 +1,51 @@
+:root {
+	--color-paper: oklch(0.97 0.012 145);
+	--color-paper-2: oklch(0.94 0.014 145);
+	--color-ink: oklch(0.22 0.018 155);
+	--color-ink-2: oklch(0.42 0.02 155);
+	--color-muted: oklch(0.44 0.018 155);
+	--color-rule: oklch(0.86 0.014 150);
+	--color-brand: oklch(0.44 0.115 155);
+	--color-brand-hover: oklch(0.37 0.105 155);
+	--color-brand-ink: oklch(0.98 0.008 155);
+	--color-focus: oklch(0.58 0.18 155);
+
+	--font-display: "Newsreader Variable", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+	--font-body: "IBM Plex Sans Variable", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+
+	--space-3xs: 0.125rem;
+	--space-2xs: 0.25rem;
+	--space-xs: 0.5rem;
+	--space-sm: 0.75rem;
+	--space-md: 1rem;
+	--space-lg: 1.5rem;
+	--space-xl: 2.5rem;
+	--space-2xl: 4rem;
+	--space-3xl: 6rem;
+	--space-4xl: 9rem;
+
+	--text-xs: 0.75rem;
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.25rem;
+	--text-lg: 1.5625rem;
+	--text-display: clamp(3.2rem, 6vw, 5.25rem);
+
+	--page-gutter: clamp(1.25rem, 4vw, 5rem);
+	--content-max: 96rem;
+	--measure-body: 60ch;
+	--size-touch: 2.75rem;
+	--size-mark: 2.25rem;
+	--size-dot: 0.4rem;
+
+	--ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+	--ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+	--ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+	--dur-micro: 120ms;
+	--dur-short: 180ms;
+
+	--rule-thin: 0.0625rem;
+	--rule-focus: 0.1875rem;
+	--radius-mark: 0.625rem;
+	--radius-action: 0.25rem;
+}

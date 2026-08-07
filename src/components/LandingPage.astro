@@ -36,7 +36,7 @@ const structuredData = JSON.stringify({
 <html lang={locale}>
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<meta name="description" content={messages.seo.description} />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta name="generator" content={Astro.generator} />
@@ -79,23 +79,15 @@ const structuredData = JSON.stringify({
 				</a>
 				<nav class="site-nav" aria-label={messages.navigationLabel}>
 					<a class="language-link" href={alternateUrl}>{messages.alternateLocaleName}</a>
-					<a class="header-community-link" href={discordUrl} target="_blank" rel="noopener noreferrer">
-						Discord <span aria-hidden="true">↗</span>
-					</a>
-					<a class="header-community-link" href={patreonUrl} target="_blank" rel="noopener noreferrer">
-						Patreon <span aria-hidden="true">↗</span>
-					</a>
-					<a class="header-community-link" href={githubUrl} target="_blank" rel="noopener noreferrer">
-						GitHub <span aria-hidden="true">↗</span>
-					</a>
 				</nav>
 			</header>
 
 			<main>
 				<section class="hero" aria-labelledby="hero-title">
-					<div class="hero-content">
-						<p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>{messages.eyebrow}</p>
+					<div class="hero-heading">
 						<h1 id="hero-title">{messages.title}</h1>
+					</div>
+					<div class="hero-note">
 						<p class="hero-description">{messages.description}</p>
 						<div class="hero-actions">
 							<span class="status"><span class="status-dot" aria-hidden="true"></span>{messages.comingSoon}</span>
@@ -108,8 +100,16 @@ const structuredData = JSON.stringify({
 			</main>
 
 			<footer class="site-footer">
-				<span>{messages.footer}</span>
-				<span>© {new Date().getFullYear()} {messages.brand}</span>
+				<div class="footer-mast">
+					<p class="footer-wordmark">{messages.brand}</p>
+					<p class="footer-tagline">{messages.footer}</p>
+				</div>
+				<nav class="footer-links" aria-label={messages.communityLabel}>
+					<a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a>
+					<a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a>
+					<a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+				</nav>
+				<p class="footer-copyright">© {new Date().getFullYear()} {messages.brand}</p>
 			</footer>
 		</div>
 	</body>

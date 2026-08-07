@@ -7,8 +7,8 @@ export interface LandingMessages {
   localeName: string;
   alternateLocaleName: string;
   navigationLabel: string;
+  communityLabel: string;
   brand: string;
-  eyebrow: string;
   title: string;
   description: string;
   comingSoon: string;
