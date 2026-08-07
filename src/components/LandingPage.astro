@@ -40,7 +40,7 @@ const structuredData = JSON.stringify({
 		<meta name="description" content={messages.seo.description} />
 		<meta name="robots" content="index, follow, max-image-preview:large" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/png" href="/app-icon.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/app-icon-32.png" />
 		<link rel="canonical" href={canonicalUrl.href} />
 		<link rel="alternate" hreflang="en-US" href={englishUrl.href} />
 		<link rel="alternate" hreflang="ja-JP" href={japaneseUrl.href} />
@@ -74,7 +74,14 @@ const structuredData = JSON.stringify({
 		<div class="site-shell">
 			<header class="site-header">
 				<a class="brand" href={homeUrl} aria-label={messages.brand}>
-					<img class="brand-mark" src="/app-icon.png" alt="" width="36" height="36" />
+					<img
+						class="brand-mark"
+						src="/app-icon-36.png"
+						srcset="/app-icon-36.png 1x, /app-icon-72.png 2x"
+						alt=""
+						width="36"
+						height="36"
+					/>
 					<span>{messages.brand}</span>
 				</a>
 				<nav class="site-nav" aria-label={messages.navigationLabel}>
