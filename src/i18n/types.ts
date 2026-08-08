@@ -10,6 +10,10 @@ export interface AboutContent {
   };
   title: string;
   lede: string;
+  missionLabel: string;
+  mission: string;
+  visionLabel: string;
+  vision: string;
   sections: AboutSection[];
 }
 

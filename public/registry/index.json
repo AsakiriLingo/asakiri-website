@@ -1,0 +1,23 @@
+{
+  "courses": [
+    {
+      "id": "course_japanese_starter",
+      "title": "Japanese Starter",
+      "description": "A beginner's path into Japanese for English speakers, from kana to first sentences.",
+      "teaches": [
+        "ja"
+      ],
+      "from": [
+        "en"
+      ],
+      "tags": [
+        "beginner",
+        "example"
+      ],
+      "repo": "https://github.com/AsakiriLingo/course-japanese-starter",
+      "latest": "1.2.0",
+      "updatedAt": "2026-08-09",
+      "versions": "/registry/courses/course_japanese_starter.json"
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.asakiri.com/registry/course.schema.json",
+  "title": "Asakiri registry course entry",
+  "description": "One course listing in the Asakiri registry. The file is the source of truth; the site's index.json is generated from all entries. Filename must equal the course id, e.g. course_japanese_starter.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "description", "repo", "teaches", "from", "latest", "releases"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": {
+      "type": "string",
+      "pattern": "^course_[a-z0-9_]+$",
+      "description": "Matches the course id in project.json, e.g. course_japanese_starter."
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "description": { "type": "string", "minLength": 1 },
+    "author": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "repo": {
+      "type": "string",
+      "pattern": "^https://github\\.com/[^/]+/[^/]+/?$",
+      "description": "Public GitHub repository that holds the course, one repo per course."
+    },
+    "teaches": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Language(s) the course teaches (BCP-47 or ISO code)."
+    },
+    "from": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 2 },
+      "description": "Language(s) the course is taught in."
+    },
+    "tags": { "type": "array", "items": { "type": "string" } },
+    "license": { "type": "string" },
+    "latest": {
+      "type": "string",
+      "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z.]+)?$",
+      "description": "Must equal the highest version in releases."
+    },
+    "releases": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/release" }
+    }
+  },
+  "$defs": {
+    "release": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "tag", "releasedAt", "formatVersion", "breaking", "source", "changelog"],
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)(?:-[0-9A-Za-z.]+)?$"
+        },
+        "tag": {
+          "type": "string",
+          "description": "Git tag for this release; must equal 'v' + version."
+        },
+        "releasedAt": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+        "formatVersion": {
+          "type": "string",
+          "description": "The project.json formatVersion this release was built against."
+        },
+        "breaking": {
+          "type": "boolean",
+          "description": "True exactly when the major number increased from the previous release."
+        },
+        "source": {
+          "type": "string",
+          "format": "uri",
+          "description": "Tag tarball URL, e.g. https://github.com/<owner>/<repo>/archive/refs/tags/v1.2.0.tar.gz"
+        },
+        "changelog": {
+          "type": "string",
+          "format": "uri",
+          "description": "URL to the release notes, e.g. the GitHub Release page."
+        },
+        "notes": { "type": "string", "description": "Short human summary of the release." }
+      }
+    }
+  }
+}
