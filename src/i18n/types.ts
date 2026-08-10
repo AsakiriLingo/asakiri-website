@@ -22,6 +22,36 @@ export interface StatementContent {
   body: string;
 }
 
+export interface SponsorContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  label: string;
+  title: string;
+  body: string;
+  cta: string;
+}
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  bio: string;
+  image: string;
+  imageAlt: string;
+  linkedin?: string;
+}
+
+export interface TeamContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  title: string;
+  lede: string;
+  members: TeamMember[];
+}
+
 export interface LandingMessages {
   seo: {
     title: string;
@@ -32,6 +62,7 @@ export interface LandingMessages {
   alternateLocaleName: string;
   navigationLabel: string;
   communityLabel: string;
+  siteLinksLabel: string;
   brand: string;
   title: string;
   description: string;
@@ -39,8 +70,12 @@ export interface LandingMessages {
   githubLink: string;
   githubAriaLabel: string;
   aboutLink: string;
+  teamLink: string;
+  sponsorLink: string;
   footer: string;
   about: AboutContent;
   mission: StatementContent;
   vision: StatementContent;
+  team: TeamContent;
+  sponsor: SponsorContent;
 }

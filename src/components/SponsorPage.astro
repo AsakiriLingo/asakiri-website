@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { LandingMessages } from "../i18n/types";
+import { patreonJoinUrl } from "../config";
+
+interface Props {
+  locale: "en" | "ja";
+  messages: LandingMessages;
+}
+
+const { locale, messages } = Astro.props;
+const { sponsor } = messages;
+---
+
+<BaseLayout locale={locale} messages={messages} page="sponsor" seo={sponsor.seo} schemaType="WebPage">
+	<article class="sponsor">
+		<p class="sponsor-label">{sponsor.label}</p>
+		<h1 class="sponsor-title">{sponsor.title}</h1>
+		<p class="sponsor-body">{sponsor.body}</p>
+		<a
+			class="sponsor-cta"
+			href={patreonJoinUrl}
+			target="_blank"
+			rel="noopener noreferrer"
+		>{sponsor.cta} <span aria-hidden="true">↗</span></a>
+	</article>
+</BaseLayout>

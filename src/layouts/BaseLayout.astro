@@ -6,7 +6,7 @@ import { githubUrl, discordUrl, patreonUrl } from "../config";
 interface Props {
   locale: "en" | "ja";
   messages: LandingMessages;
-  page: "home" | "about" | "mission" | "vision";
+  page: "home" | "about" | "mission" | "vision" | "team" | "sponsor";
   seo: { title: string; description: string };
   schemaType?: string;
 }
@@ -18,12 +18,16 @@ const paths = {
   about: { en: "/about/", ja: "/ja/about/" },
   mission: { en: "/mission/", ja: "/ja/mission/" },
   vision: { en: "/vision/", ja: "/ja/vision/" },
+  team: { en: "/team/", ja: "/ja/team/" },
+  sponsor: { en: "/sponsor/", ja: "/ja/sponsor/" },
 } as const;
 
 const homeUrl = locale === "ja" ? "/ja/" : "/";
 const aboutUrl = paths.about[locale];
 const missionUrl = paths.mission[locale];
 const visionUrl = paths.vision[locale];
+const teamUrl = paths.team[locale];
+const sponsorUrl = paths.sponsor[locale];
 const alternateLocale = locale === "ja" ? "en" : "ja";
 const alternateUrl = paths[page][alternateLocale];
 
@@ -129,11 +133,17 @@ const structuredData = JSON.stringify({
 					<p class="footer-wordmark">{messages.brand}</p>
 					<p class="footer-tagline">{messages.footer}</p>
 				</div>
-				<nav class="footer-links" aria-label={messages.communityLabel}>
-					<a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a>
-					<a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a>
-					<a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-				</nav>
+				<div class="footer-nav">
+					<nav class="footer-links" aria-label={messages.siteLinksLabel}>
+						<a href={teamUrl} aria-current={page === "team" ? "page" : undefined}>{messages.teamLink}</a>
+						<a href={sponsorUrl} aria-current={page === "sponsor" ? "page" : undefined}>{messages.sponsorLink}</a>
+					</nav>
+					<nav class="footer-links" aria-label={messages.communityLabel}>
+						<a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a>
+						<a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a>
+						<a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+					</nav>
+				</div>
 				<p class="footer-copyright">© {new Date().getFullYear()} {messages.brand}</p>
 			</footer>
 		</div>
