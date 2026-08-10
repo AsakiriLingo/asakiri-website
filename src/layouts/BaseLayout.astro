@@ -1,12 +1,12 @@
 ---
 import "../styles/global.css";
 import type { LandingMessages } from "../i18n/types";
-import { githubUrl, discordUrl, patreonUrl } from "../config";
+import { githubUrl, discordUrl, patreonUrl, linkedinUrl } from "../config";
 
 interface Props {
   locale: "en" | "ja";
   messages: LandingMessages;
-  page: "home" | "about" | "mission" | "vision" | "team" | "sponsor";
+  page: "home" | "about" | "mission" | "vision" | "team" | "sponsor" | "privacy" | "terms";
   seo: { title: string; description: string };
   schemaType?: string;
 }
@@ -20,6 +20,8 @@ const paths = {
   vision: { en: "/vision/", ja: "/ja/vision/" },
   team: { en: "/team/", ja: "/ja/team/" },
   sponsor: { en: "/sponsor/", ja: "/ja/sponsor/" },
+  privacy: { en: "/privacy/", ja: "/ja/privacy/" },
+  terms: { en: "/terms/", ja: "/ja/terms/" },
 } as const;
 
 const homeUrl = locale === "ja" ? "/ja/" : "/";
@@ -28,6 +30,8 @@ const missionUrl = paths.mission[locale];
 const visionUrl = paths.vision[locale];
 const teamUrl = paths.team[locale];
 const sponsorUrl = paths.sponsor[locale];
+const privacyUrl = paths.privacy[locale];
+const termsUrl = paths.terms[locale];
 const alternateLocale = locale === "ja" ? "en" : "ja";
 const alternateUrl = paths[page][alternateLocale];
 
@@ -37,8 +41,8 @@ const englishUrl = new URL(paths[page].en, siteUrl);
 const japaneseUrl = new URL(paths[page].ja, siteUrl);
 
 const socialImage = locale === "ja"
-  ? { url: new URL("/og-ja.png", siteUrl), width: "3418", height: "1740" }
-  : { url: new URL("/og-image.png", siteUrl), width: "3410", height: "1732" };
+  ? { url: new URL("/og-ja.png", siteUrl), width: "2400", height: "1260" }
+  : { url: new URL("/og-image.png", siteUrl), width: "2400", height: "1260" };
 const ogLocale = locale === "ja" ? "ja_JP" : "en_US";
 const alternateOgLocale = locale === "ja" ? "en_US" : "ja_JP";
 
@@ -142,9 +146,16 @@ const structuredData = JSON.stringify({
 						<a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a>
 						<a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a>
 						<a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
 					</nav>
 				</div>
-				<p class="footer-copyright">© {new Date().getFullYear()} {messages.brand}</p>
+				<div class="footer-baseline">
+					<p class="footer-copyright">© {new Date().getFullYear()} {messages.brand}</p>
+					<nav class="footer-links footer-legal" aria-label={messages.legalLabel}>
+						<a href={privacyUrl} aria-current={page === "privacy" ? "page" : undefined}>{messages.privacyLink}</a>
+						<a href={termsUrl} aria-current={page === "terms" ? "page" : undefined}>{messages.termsLink}</a>
+					</nav>
+				</div>
 			</footer>
 		</div>
 	</body>

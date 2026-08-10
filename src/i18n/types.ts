@@ -22,6 +22,22 @@ export interface StatementContent {
   body: string;
 }
 
+export interface LegalSection {
+  heading: string;
+  body: string[];
+}
+
+export interface LegalContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  title: string;
+  updated: string;
+  lede: string;
+  sections: LegalSection[];
+}
+
 export interface SponsorContent {
   seo: {
     title: string;
@@ -72,10 +88,15 @@ export interface LandingMessages {
   aboutLink: string;
   teamLink: string;
   sponsorLink: string;
+  privacyLink: string;
+  termsLink: string;
+  legalLabel: string;
   footer: string;
   about: AboutContent;
   mission: StatementContent;
   vision: StatementContent;
   team: TeamContent;
   sponsor: SponsorContent;
+  privacy: LegalContent;
+  terms: LegalContent;
 }

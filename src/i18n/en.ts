@@ -2,9 +2,9 @@ import type { LandingMessages } from "./types";
 
 export const enMessages = {
   seo: {
-    title: "Asakiri | Create and learn language courses",
+    title: "Asakiri | Teach and learn languages",
     description:
-      "Asakiri is a home for language learning: build deep courses with rich media and exercises, then study them in a free learner app. Your work stays yours.",
+      "Asakiri is a home for language learning: teach deep courses with rich media and exercises, then study them in a free learner app. Your work stays yours.",
     imageAlt: "Asakiri, a home for language learning",
   },
   localeName: "English",
@@ -15,14 +15,17 @@ export const enMessages = {
   brand: "Asakiri",
   title: "Language learning, made to stay yours.",
   description:
-    "Asakiri is a home for language learning. Build deep, structured courses with rich media and exercises, then study them in a free learner app. Everything you make stays yours.",
+    "Asakiri is a home for language learning. Teach deep, structured courses with rich media and exercises, then study them in a free learner app. Everything you make stays yours.",
   comingSoon: "Coming soon",
   githubLink: "View on GitHub",
   githubAriaLabel: "Open Asakiri Studio on GitHub",
   aboutLink: "About",
   teamLink: "Team",
   sponsorLink: "Sponsors",
-  footer: "Made for the people who build and learn languages.",
+  privacyLink: "Privacy",
+  termsLink: "Terms",
+  legalLabel: "Legal",
+  footer: "Made for the people who teach and learn languages.",
   about: {
     seo: {
       title: "Why Asakiri exists | Asakiri",
@@ -53,8 +56,8 @@ export const enMessages = {
       {
         heading: "What Asakiri is",
         body: [
-          "Asakiri is a home for language learning, and it has two sides. One is a place to build language courses with structured lessons, reusable content, rich media, and interactive exercises. The other is a free app to learn from them.",
-          "Courses remain portable and under the control of the people who make them. The goal is to let anyone who cares about a language, especially smaller and overlooked languages, build a course worth learning from, and to give learners a good way to study it.",
+          "Asakiri is a home for language learning, and it has two sides. One is a place to teach a language with structured lessons, reusable content, rich media, and interactive exercises. The other is a free app to learn from them.",
+          "Courses remain portable and under the control of the people who make them. The goal is to let anyone who cares about a language, especially smaller and overlooked languages, teach a course worth learning from, and to give learners a good way to study it.",
           "Asakiri is still early. If that idea interests you, follow along, try it out, or help build it.",
         ],
       },
@@ -124,5 +127,103 @@ export const enMessages = {
     body:
       "Asakiri is built in the open and made possible by the people who believe in it. There are no sponsors here yet, so this space is wide open. Back the project on Patreon and you'll be the very first name on the list.",
     cta: "Sponsor on Patreon",
+  },
+  privacy: {
+    seo: {
+      title: "Privacy Policy | Asakiri",
+      description:
+        "Asakiri's privacy policy. The short version: we don't collect your personal data.",
+    },
+    title: "Privacy Policy",
+    updated: "Last updated 10 August 2026",
+    lede: "The short version: Asakiri does not collect your personal data.",
+    sections: [
+      {
+        heading: "What we collect",
+        body: [
+          "Nothing. Asakiri does not collect, store, or sell your personal information. You don't need an account to use the software, and we don't track you across the web.",
+        ],
+      },
+      {
+        heading: "Your courses and content",
+        body: [
+          "The courses and content you create belong to you. Asakiri is built to keep your work on your own device, so your material stays in your hands, not on our servers.",
+        ],
+      },
+      {
+        heading: "This website",
+        body: [
+          "This site is a set of plain, static pages. We don't use analytics, advertising, or tracking cookies.",
+          "Our hosting provider may keep standard server logs for security and reliability, but we don't use them to identify or profile you.",
+        ],
+      },
+      {
+        heading: "Links to other services",
+        body: [
+          "Some links lead to other services, such as GitHub, Discord, and Patreon. Those services have their own privacy policies, and this policy doesn't cover them.",
+        ],
+      },
+      {
+        heading: "Changes to this policy",
+        body: [
+          "If this policy ever changes, we'll update this page along with the date above.",
+        ],
+      },
+      {
+        heading: "Contact",
+        body: [
+          "If you have any questions about privacy, reach out through our Discord or GitHub community.",
+        ],
+      },
+    ],
+  },
+  terms: {
+    seo: {
+      title: "Terms of Service | Asakiri",
+      description:
+        "Plain-language terms for using Asakiri and this website.",
+    },
+    title: "Terms of Service",
+    updated: "Last updated 10 August 2026",
+    lede: "Plain-language terms for using Asakiri and this website.",
+    sections: [
+      {
+        heading: "Using Asakiri",
+        body: [
+          "Asakiri is provided for you to create and learn from language courses. You're welcome to use it for personal, educational, and commercial projects.",
+        ],
+      },
+      {
+        heading: "Your content",
+        body: [
+          "You keep ownership of the courses and content you create with Asakiri. You're responsible for what you make and share, and for holding the rights to any material you include.",
+        ],
+      },
+      {
+        heading: "Open source",
+        body: [
+          "Asakiri Studio is open source. Your use of the source code is governed by the license published in the project repository.",
+        ],
+      },
+      {
+        heading: "No warranty",
+        body: [
+          "Asakiri is offered as-is, without warranties of any kind. We can't guarantee it will be error-free or always available.",
+          "To the fullest extent allowed by law, we are not liable for any loss or damage arising from your use of Asakiri. Keep your own backups of work that matters to you.",
+        ],
+      },
+      {
+        heading: "Changes to these terms",
+        body: [
+          "We may update these terms as Asakiri grows. When we do, we'll revise this page along with the date above.",
+        ],
+      },
+      {
+        heading: "Contact",
+        body: [
+          "If you have any questions about these terms, reach out through our Discord or GitHub community.",
+        ],
+      },
+    ],
   },
 } satisfies LandingMessages;
