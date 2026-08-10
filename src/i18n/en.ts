@@ -28,12 +28,6 @@ export const enMessages = {
     },
     title: "Why Asakiri exists",
     lede: "Asakiri started with a language I wanted to learn and couldn't find a good way into.",
-    missionLabel: "Mission",
-    mission:
-      "Make every language fully learnable by putting the tools to create, own, and share deep courses in everyone's hands.",
-    visionLabel: "Vision",
-    vision:
-      "Every language, endangered or overlooked, stays learnable and alive, passed on instead of lost.",
     sections: [
       {
         heading: "The resources weren't there",
@@ -62,5 +56,25 @@ export const enMessages = {
         ],
       },
     ],
+  },
+  mission: {
+    seo: {
+      title: "Mission | Asakiri",
+      description:
+        "Asakiri's mission: make every language fully learnable by putting the tools to create, own, and share deep courses in everyone's hands.",
+    },
+    label: "Mission",
+    body:
+      "Make every language fully learnable by putting the tools to create, own, and share deep courses in everyone's hands.",
+  },
+  vision: {
+    seo: {
+      title: "Vision | Asakiri",
+      description:
+        "Asakiri's vision: every language, endangered or overlooked, stays learnable and alive, passed on instead of lost.",
+    },
+    label: "Vision",
+    body:
+      "Every language, endangered or overlooked, stays learnable and alive, passed on instead of lost.",
   },
 } satisfies LandingMessages;

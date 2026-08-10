@@ -270,17 +270,16 @@ h1 {
 	text-wrap: pretty;
 }
 
-.about-statements {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr);
-	gap: var(--space-xl);
-	margin-block-start: var(--space-2xl);
-	padding-block-start: var(--space-xl);
-	border-block-start: var(--rule-thin) solid var(--color-rule);
+.statement {
+	width: min(100%, 46rem);
+	margin-inline: auto;
+	padding-block: var(--space-3xl);
+	padding-inline-start: max(var(--page-gutter), env(safe-area-inset-left));
+	padding-inline-end: max(var(--page-gutter), env(safe-area-inset-right));
 }
 
-.about-statement-label {
-	margin: 0 0 var(--space-xs);
+.statement-label {
+	margin: 0 0 var(--space-md);
 	color: var(--color-brand);
 	font-size: var(--text-sm);
 	font-weight: 600;
@@ -288,13 +287,15 @@ h1 {
 	text-transform: uppercase;
 }
 
-.about-statement-body {
+.statement-body {
+	max-width: none;
 	margin: 0;
 	color: var(--color-ink);
 	font-family: var(--font-display);
-	font-size: clamp(var(--text-md), 1.8vw, var(--text-lg));
+	font-size: clamp(2rem, 4.5vw, 3rem);
 	font-weight: 400;
-	line-height: 1.35;
+	letter-spacing: -0.02em;
+	line-height: 1.2;
 	text-wrap: pretty;
 }
 

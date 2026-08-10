@@ -1,0 +1,20 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { LandingMessages, StatementContent } from "../i18n/types";
+
+interface Props {
+  locale: "en" | "ja";
+  messages: LandingMessages;
+  page: "mission" | "vision";
+  content: StatementContent;
+}
+
+const { locale, messages, page, content } = Astro.props;
+---
+
+<BaseLayout locale={locale} messages={messages} page={page} seo={content.seo} schemaType="AboutPage">
+	<article class="statement">
+		<p class="statement-label">{content.label}</p>
+		<h1 class="statement-body">{content.body}</h1>
+	</article>
+</BaseLayout>

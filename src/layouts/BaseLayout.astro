@@ -6,7 +6,7 @@ import { githubUrl, discordUrl, patreonUrl } from "../config";
 interface Props {
   locale: "en" | "ja";
   messages: LandingMessages;
-  page: "home" | "about";
+  page: "home" | "about" | "mission" | "vision";
   seo: { title: string; description: string };
   schemaType?: string;
 }
@@ -16,10 +16,14 @@ const { locale, messages, page, seo, schemaType = "WebSite" } = Astro.props;
 const paths = {
   home: { en: "/", ja: "/ja/" },
   about: { en: "/about/", ja: "/ja/about/" },
+  mission: { en: "/mission/", ja: "/ja/mission/" },
+  vision: { en: "/vision/", ja: "/ja/vision/" },
 } as const;
 
 const homeUrl = locale === "ja" ? "/ja/" : "/";
 const aboutUrl = paths.about[locale];
+const missionUrl = paths.mission[locale];
+const visionUrl = paths.vision[locale];
 const alternateLocale = locale === "ja" ? "en" : "ja";
 const alternateUrl = paths[page][alternateLocale];
 
@@ -102,6 +106,16 @@ const structuredData = JSON.stringify({
 						href={aboutUrl}
 						aria-current={page === "about" ? "page" : undefined}
 					>{messages.aboutLink}</a>
+					<a
+						class="nav-link"
+						href={missionUrl}
+						aria-current={page === "mission" ? "page" : undefined}
+					>{messages.mission.label}</a>
+					<a
+						class="nav-link"
+						href={visionUrl}
+						aria-current={page === "vision" ? "page" : undefined}
+					>{messages.vision.label}</a>
 					<a class="language-link" href={alternateUrl}>{messages.alternateLocaleName}</a>
 				</nav>
 			</header>

@@ -10,11 +10,16 @@ export interface AboutContent {
   };
   title: string;
   lede: string;
-  missionLabel: string;
-  mission: string;
-  visionLabel: string;
-  vision: string;
   sections: AboutSection[];
+}
+
+export interface StatementContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  label: string;
+  body: string;
 }
 
 export interface LandingMessages {
@@ -36,4 +41,6 @@ export interface LandingMessages {
   aboutLink: string;
   footer: string;
   about: AboutContent;
+  mission: StatementContent;
+  vision: StatementContent;
 }
