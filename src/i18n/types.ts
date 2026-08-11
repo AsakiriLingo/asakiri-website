@@ -49,6 +49,24 @@ export interface SponsorContent {
   cta: string;
 }
 
+export interface ContactMethod {
+  label: string;
+  value: string;
+}
+
+export interface ContactContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  title: string;
+  lede: string;
+  email: ContactMethod;
+  discord: ContactMethod;
+  github: ContactMethod;
+  linkedin: ContactMethod;
+}
+
 export interface NotFoundContent {
   seo: {
     title: string;
@@ -100,6 +118,7 @@ export interface LandingMessages {
   aboutLink: string;
   teamLink: string;
   sponsorLink: string;
+  contactLink: string;
   privacyLink: string;
   termsLink: string;
   legalLabel: string;
@@ -111,5 +130,6 @@ export interface LandingMessages {
   sponsor: SponsorContent;
   privacy: LegalContent;
   terms: LegalContent;
+  contact: ContactContent;
   notFound: NotFoundContent;
 }

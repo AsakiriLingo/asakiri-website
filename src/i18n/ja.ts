@@ -22,6 +22,7 @@ export const jaMessages = {
   aboutLink: "アサキリについて",
   teamLink: "チーム",
   sponsorLink: "スポンサー",
+  contactLink: "お問い合わせ",
   privacyLink: "プライバシー",
   termsLink: "利用規約",
   legalLabel: "法的情報",
@@ -226,6 +227,18 @@ export const jaMessages = {
         ],
       },
     ],
+  },
+  contact: {
+    seo: {
+      title: "お問い合わせ | アサキリ",
+      description: "メールやコミュニティを通じて、アサキリにお問い合わせいただけます。",
+    },
+    title: "お問い合わせ",
+    lede: "ご質問、アイデア、ご意見などがありましたら、メールか、コミュニティからお気軽にご連絡ください。",
+    email: { label: "メール", value: "alok@asakiri.com" },
+    discord: { label: "Discord", value: "コミュニティに参加する" },
+    github: { label: "GitHub", value: "AsakiriLingo/asakiri-studio" },
+    linkedin: { label: "LinkedIn", value: "アサキリをフォローする" },
   },
   notFound: {
     seo: {

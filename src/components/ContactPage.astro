@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { LandingMessages } from "../i18n/types";
+import { contactEmail, discordUrl, githubUrl, linkedinUrl } from "../config";
+
+interface Props {
+  locale: "en" | "ja";
+  messages: LandingMessages;
+}
+
+const { locale, messages } = Astro.props;
+const { contact } = messages;
+
+const methods = [
+  { ...contact.email, href: `mailto:${contactEmail}`, external: false },
+  { ...contact.discord, href: discordUrl, external: true },
+  { ...contact.github, href: githubUrl, external: true },
+  { ...contact.linkedin, href: linkedinUrl, external: true },
+];
+---
+
+<BaseLayout locale={locale} messages={messages} page="contact" seo={contact.seo} schemaType="ContactPage">
+	<article class="about">
+		<header class="about-head">
+			<h1>{contact.title}</h1>
+			<p class="about-lede">{contact.lede}</p>
+		</header>
+		<ul class="contact-methods" role="list">
+			{methods.map((method) => (
+				<li class="contact-method">
+					<span class="contact-method-label">{method.label}</span>
+					{method.external ? (
+						<a href={method.href} target="_blank" rel="noopener noreferrer">
+							{method.value} <span aria-hidden="true">↗</span>
+						</a>
+					) : (
+						<a href={method.href}>{method.value}</a>
+					)}
+				</li>
+			))}
+		</ul>
+	</article>
+</BaseLayout>

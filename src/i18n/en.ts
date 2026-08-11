@@ -22,6 +22,7 @@ export const enMessages = {
   aboutLink: "About",
   teamLink: "Team",
   sponsorLink: "Sponsors",
+  contactLink: "Contact",
   privacyLink: "Privacy",
   termsLink: "Terms",
   legalLabel: "Legal",
@@ -226,6 +227,18 @@ export const enMessages = {
         ],
       },
     ],
+  },
+  contact: {
+    seo: {
+      title: "Contact | Asakiri",
+      description: "Get in touch with Asakiri by email or through our community.",
+    },
+    title: "Get in touch",
+    lede: "Questions, ideas, or feedback? Reach out by email, or find us in the community.",
+    email: { label: "Email", value: "alok@asakiri.com" },
+    discord: { label: "Discord", value: "Join the community" },
+    github: { label: "GitHub", value: "AsakiriLingo/asakiri-studio" },
+    linkedin: { label: "LinkedIn", value: "Follow Asakiri" },
   },
   notFound: {
     seo: {

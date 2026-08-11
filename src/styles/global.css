@@ -311,6 +311,48 @@ h1 {
 	text-wrap: pretty;
 }
 
+.contact-methods {
+	margin: var(--space-2xl) 0 0;
+	padding: 0;
+	list-style: none;
+	border-block-start: var(--rule-thin) solid var(--color-rule);
+}
+
+.contact-method {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: var(--space-2xs) var(--space-lg);
+	padding-block: var(--space-lg);
+	border-block-end: var(--rule-thin) solid var(--color-rule);
+}
+
+.contact-method-label {
+	flex: none;
+	width: 7rem;
+	color: var(--color-brand);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.contact-method a {
+	color: var(--color-ink);
+	font-family: var(--font-display);
+	font-size: clamp(var(--text-md), 2vw, var(--text-lg));
+	line-height: 1.2;
+	text-decoration-color: transparent;
+	text-decoration-thickness: var(--rule-thin);
+	text-underline-offset: var(--space-xs);
+	transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out);
+}
+
+.contact-method a:hover {
+	color: var(--color-brand);
+	text-decoration-color: currentColor;
+}
+
 .sponsor,
 .notfound {
 	width: min(100%, 46rem);
