@@ -246,9 +246,10 @@ export const enMessages = {
       "Green on paper. Brand green carries accents and calls to action, ink is for text, and paper is for backgrounds. Colors are defined in OKLCH, the source of truth; hex is provided for convenience.",
     typeHeading: "Typography",
     typeBody:
-      "Two typefaces. Newsreader, a warm serif, carries display and headings. IBM Plex Sans handles body text and interface.",
+      "Two typefaces. Newsreader, a warm serif, carries display and headings; IBM Plex Sans handles body text and interface. For Japanese, these pair with Noto Serif JP and Noto Sans JP, falling back to the system Mincho and Gothic faces.",
     displayRole: "Display · headings",
     bodyRole: "Body · interface & long-form",
+    japaneseLabel: "Japanese",
     voiceHeading: "Voice",
     voice: [
       {

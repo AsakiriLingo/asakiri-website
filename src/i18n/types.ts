@@ -70,6 +70,7 @@ export interface BrandContent {
   typeBody: string;
   displayRole: string;
   bodyRole: string;
+  japaneseLabel: string;
   voiceHeading: string;
   voice: BrandPrinciple[];
   namingHeading: string;

@@ -25,8 +25,8 @@ const colors = [
 ];
 
 const fonts = [
-  { name: "Newsreader", stack: "var(--font-display)", role: brand.displayRole },
-  { name: "IBM Plex Sans", stack: "var(--font-body)", role: brand.bodyRole },
+  { name: "Newsreader", jp: "Noto Serif JP", stack: "var(--font-display)", role: brand.displayRole },
+  { name: "IBM Plex Sans", jp: "Noto Sans JP", stack: "var(--font-body)", role: brand.bodyRole },
 ];
 ---
 
@@ -83,8 +83,9 @@ const fonts = [
 			<div class="specimens">
 				{fonts.map((f) => (
 					<div class="specimen">
-						<p class="specimen-sample" style={`font-family: ${f.stack};`}>Aa</p>
+						<p class="specimen-sample" style={`font-family: ${f.stack};`}>Aa あ</p>
 						<p class="specimen-name">{f.name}</p>
+						<p class="specimen-jp">{f.jp}<span aria-hidden="true"> · </span>{brand.japaneseLabel}</p>
 						<p class="specimen-role">{f.role}</p>
 					</div>
 				))}

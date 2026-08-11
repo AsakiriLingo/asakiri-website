@@ -246,9 +246,10 @@ export const jaMessages = {
       "ペーパーの上のグリーン。ブランドグリーンはアクセントやアクション、インクは文字、ペーパーは背景に使います。カラーは基準となるOKLCHで定義しています。参考のためにHEXも記載しています。",
     typeHeading: "タイポグラフィ",
     typeBody:
-      "書体は2つ。あたたかみのあるセリフ体、Newsreaderが見出しとディスプレイを担います。IBM Plex Sansが本文とインターフェースを担当します。",
+      "書体は2つ。あたたかみのあるセリフ体、Newsreaderが見出しとディスプレイを、IBM Plex Sansが本文とインターフェースを担います。日本語では、Noto Serif JPとNoto Sans JPと組み合わせ、環境に応じて明朝体・ゴシック体のシステムフォントにフォールバックします。",
     displayRole: "ディスプレイ・見出し",
     bodyRole: "本文・インターフェース",
+    japaneseLabel: "日本語",
     voiceHeading: "トーン",
     voice: [
       {
