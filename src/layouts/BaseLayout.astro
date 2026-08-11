@@ -6,12 +6,13 @@ import { githubUrl, discordUrl, patreonUrl, linkedinUrl } from "../config";
 interface Props {
   locale: "en" | "ja";
   messages: LandingMessages;
-  page: "home" | "about" | "mission" | "vision" | "team" | "sponsor" | "privacy" | "terms";
+  page: "home" | "about" | "mission" | "vision" | "team" | "sponsor" | "privacy" | "terms" | "404";
   seo: { title: string; description: string };
   schemaType?: string;
+  noindex?: boolean;
 }
 
-const { locale, messages, page, seo, schemaType = "WebSite" } = Astro.props;
+const { locale, messages, page, seo, schemaType = "WebSite", noindex = false } = Astro.props;
 
 const paths = {
   home: { en: "/", ja: "/ja/" },
@@ -24,6 +25,8 @@ const paths = {
   terms: { en: "/terms/", ja: "/ja/terms/" },
 } as const;
 
+const pathEntry = paths[page as keyof typeof paths] ?? paths.home;
+
 const homeUrl = locale === "ja" ? "/ja/" : "/";
 const aboutUrl = paths.about[locale];
 const missionUrl = paths.mission[locale];
@@ -33,12 +36,12 @@ const sponsorUrl = paths.sponsor[locale];
 const privacyUrl = paths.privacy[locale];
 const termsUrl = paths.terms[locale];
 const alternateLocale = locale === "ja" ? "en" : "ja";
-const alternateUrl = paths[page][alternateLocale];
+const alternateUrl = pathEntry[alternateLocale];
 
 const siteUrl = Astro.site ?? new URL("https://www.asakiri.com");
-const canonicalUrl = new URL(paths[page][locale], siteUrl);
-const englishUrl = new URL(paths[page].en, siteUrl);
-const japaneseUrl = new URL(paths[page].ja, siteUrl);
+const canonicalUrl = new URL(pathEntry[locale], siteUrl);
+const englishUrl = new URL(pathEntry.en, siteUrl);
+const japaneseUrl = new URL(pathEntry.ja, siteUrl);
 
 const socialImage = locale === "ja"
   ? { url: new URL("/og-ja.png", siteUrl), width: "2400", height: "1260" }
@@ -62,13 +65,17 @@ const structuredData = JSON.stringify({
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 		<meta name="description" content={seo.description} />
-		<meta name="robots" content="index, follow, max-image-preview:large" />
+		<meta name="robots" content={noindex ? "noindex, follow" : "index, follow, max-image-preview:large"} />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/png" sizes="32x32" href="/app-icon-32.png" />
-		<link rel="canonical" href={canonicalUrl.href} />
-		<link rel="alternate" hreflang="en-US" href={englishUrl.href} />
-		<link rel="alternate" hreflang="ja-JP" href={japaneseUrl.href} />
-		<link rel="alternate" hreflang="x-default" href={englishUrl.href} />
+		{!noindex && (
+			<>
+				<link rel="canonical" href={canonicalUrl.href} />
+				<link rel="alternate" hreflang="en-US" href={englishUrl.href} />
+				<link rel="alternate" hreflang="ja-JP" href={japaneseUrl.href} />
+				<link rel="alternate" hreflang="x-default" href={englishUrl.href} />
+			</>
+		)}
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
 		<meta property="og:type" content="website" />

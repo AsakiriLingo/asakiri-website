@@ -311,7 +311,8 @@ h1 {
 	text-wrap: pretty;
 }
 
-.sponsor {
+.sponsor,
+.notfound {
 	width: min(100%, 46rem);
 	margin-inline: auto;
 	padding-block: var(--space-3xl);
@@ -319,7 +320,8 @@ h1 {
 	padding-inline-end: max(var(--page-gutter), env(safe-area-inset-right));
 }
 
-.sponsor-label {
+.sponsor-label,
+.notfound-label {
 	margin: 0 0 var(--space-md);
 	color: var(--color-brand);
 	font-size: var(--text-sm);
@@ -328,7 +330,8 @@ h1 {
 	text-transform: uppercase;
 }
 
-.sponsor-title {
+.sponsor-title,
+.notfound-title {
 	max-width: none;
 	margin: 0;
 	color: var(--color-ink);
@@ -340,7 +343,8 @@ h1 {
 	text-wrap: balance;
 }
 
-.sponsor-body {
+.sponsor-body,
+.notfound-body {
 	margin: var(--space-lg) 0 0;
 	max-width: var(--measure-body);
 	color: var(--color-ink-2);
@@ -349,7 +353,8 @@ h1 {
 	text-wrap: pretty;
 }
 
-.sponsor-cta {
+.sponsor-cta,
+.notfound-home {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--space-xs);
@@ -368,13 +373,15 @@ h1 {
 	transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
 }
 
-.sponsor-cta:hover {
+.sponsor-cta:hover,
+.notfound-home:hover {
 	color: var(--color-brand-ink);
 	background: var(--color-brand-hover);
 	border-color: var(--color-brand-hover);
 }
 
-.sponsor-cta:active {
+.sponsor-cta:active,
+.notfound-home:active {
 	transform: translateY(var(--space-3xs));
 }
 
@@ -467,6 +474,8 @@ h1 {
 }
 
 .team-social {
+	display: flex;
+	align-items: center;
 	margin: var(--space-sm) 0 0;
 }
 
@@ -476,9 +485,12 @@ h1 {
 	justify-content: center;
 	min-width: var(--size-touch);
 	min-height: var(--size-touch);
-	margin-inline-start: calc(-1 * var(--space-2xs));
 	color: var(--color-muted);
 	transition: color var(--dur-short) var(--ease-out);
+}
+
+.team-social a:first-child {
+	margin-inline-start: calc(-1 * var(--space-2xs));
 }
 
 .team-social a:hover {

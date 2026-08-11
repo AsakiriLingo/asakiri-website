@@ -99,6 +99,7 @@ export const jaMessages = {
         image: "/team/alok.jpg",
         imageAlt: "アサキリのマスコット、アロクを表すオレンジ色の猫のイラスト",
         linkedin: "https://www.linkedin.com/in/alekoi",
+        email: "alok@asakiri.com",
       },
       {
         name: "ソレ",
@@ -225,5 +226,15 @@ export const jaMessages = {
         ],
       },
     ],
+  },
+  notFound: {
+    seo: {
+      title: "ページが見つかりません | アサキリ",
+      description: "お探しのページは存在しないか、移動した可能性があります。",
+    },
+    label: "404",
+    title: "ページが見つかりません。",
+    body: "お探しのページは見つかりませんでした。移動したか、もともと存在しなかったのかもしれません。",
+    homeLink: "ホームに戻る",
   },
 } satisfies LandingMessages;

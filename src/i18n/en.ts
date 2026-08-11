@@ -99,6 +99,7 @@ export const enMessages = {
         image: "/team/alok.jpg",
         imageAlt: "Illustrated orange cat, Asakiri's mascot for Alok",
         linkedin: "https://www.linkedin.com/in/alekoi",
+        email: "alok@asakiri.com",
       },
       {
         name: "Sole",
@@ -225,5 +226,15 @@ export const enMessages = {
         ],
       },
     ],
+  },
+  notFound: {
+    seo: {
+      title: "Page not found | Asakiri",
+      description: "The page you were looking for doesn't exist or has moved.",
+    },
+    label: "404",
+    title: "This page wandered off.",
+    body: "We couldn't find the page you were looking for. It may have moved, or never existed at all.",
+    homeLink: "Back to home",
   },
 } satisfies LandingMessages;

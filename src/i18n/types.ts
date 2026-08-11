@@ -49,6 +49,17 @@ export interface SponsorContent {
   cta: string;
 }
 
+export interface NotFoundContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  label: string;
+  title: string;
+  body: string;
+  homeLink: string;
+}
+
 export interface TeamMember {
   name: string;
   role: string;
@@ -56,6 +67,7 @@ export interface TeamMember {
   image: string;
   imageAlt: string;
   linkedin?: string;
+  email?: string;
 }
 
 export interface TeamContent {
@@ -99,4 +111,5 @@ export interface LandingMessages {
   sponsor: SponsorContent;
   privacy: LegalContent;
   terms: LegalContent;
+  notFound: NotFoundContent;
 }
