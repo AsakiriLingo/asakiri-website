@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { LandingMessages } from "../i18n/types";
+
+interface Props {
+  locale: "en" | "ja";
+  messages: LandingMessages;
+}
+
+const { locale, messages } = Astro.props;
+const brand = messages.brandKit;
+
+// Values mirror tokens.css (OKLCH is the source of truth; hex for convenience).
+const colors = [
+  { name: "Brand", token: "--color-brand", oklch: "oklch(0.44 0.115 155)", hex: "#006435", onDark: false },
+  { name: "Brand hover", token: "--color-brand-hover", oklch: "oklch(0.37 0.105 155)", hex: "#004F25", onDark: false },
+  { name: "Brand ink", token: "--color-brand-ink", oklch: "oklch(0.98 0.008 155)", hex: "#F4FAF6", onDark: true },
+  { name: "Ink", token: "--color-ink", oklch: "oklch(0.22 0.018 155)", hex: "#141D17", onDark: false },
+  { name: "Ink 2", token: "--color-ink-2", oklch: "oklch(0.42 0.02 155)", hex: "#455048", onDark: false },
+  { name: "Muted", token: "--color-muted", oklch: "oklch(0.44 0.018 155)", hex: "#4B564E", onDark: false },
+  { name: "Paper", token: "--color-paper", oklch: "oklch(0.97 0.012 145)", hex: "#F0F7F0", onDark: true },
+  { name: "Paper 2", token: "--color-paper-2", oklch: "oklch(0.94 0.014 145)", hex: "#E6EEE6", onDark: true },
+  { name: "Rule", token: "--color-rule", oklch: "oklch(0.86 0.014 150)", hex: "#CBD4CC", onDark: true },
+  { name: "Focus", token: "--color-focus", oklch: "oklch(0.58 0.18 155)", hex: "#009746", onDark: false },
+];
+
+const fonts = [
+  { name: "Newsreader", stack: "var(--font-display)", role: brand.displayRole },
+  { name: "IBM Plex Sans", stack: "var(--font-body)", role: brand.bodyRole },
+];
+---
+
+<BaseLayout locale={locale} messages={messages} page="brand" seo={brand.seo} schemaType="WebPage">
+	<article class="brandkit">
+		<header class="brand-head">
+			<h1>{brand.title}</h1>
+			<p class="brand-lede">{brand.lede}</p>
+		</header>
+
+		<section class="brand-section">
+			<h2>{brand.logoHeading}</h2>
+			<div class="brand-logo">
+				<div class="brand-logo-tiles">
+					<div class="brand-logo-tile">
+						<img src="/app-icon-72.png" srcset="/app-icon-72.png 1x, /app-icon.png 2x" alt="Asakiri logo, a green dew drop and yellow sun" width="72" height="72" />
+					</div>
+					<div class="brand-logo-tile brand-logo-tile--dark">
+						<img src="/app-icon-72.png" srcset="/app-icon-72.png 1x, /app-icon.png 2x" alt="" width="72" height="72" />
+					</div>
+					<div class="brand-logo-lockup">
+						<img src="/app-icon-36.png" srcset="/app-icon-36.png 1x, /app-icon-72.png 2x" alt="" width="36" height="36" />
+						<span>{messages.brand}</span>
+					</div>
+				</div>
+				<p class="brand-body">{brand.logoBody}</p>
+				<a class="brand-download" href="/app-icon.png" download>
+					{brand.logoDownload} <span aria-hidden="true">↓</span>
+				</a>
+			</div>
+		</section>
+
+		<section class="brand-section">
+			<h2>{brand.colorHeading}</h2>
+			<p class="brand-body">{brand.colorBody}</p>
+			<ul class="swatches" role="list">
+				{colors.map((c) => (
+					<li class="swatch">
+						<span
+							class:list={["swatch-chip", { "swatch-chip--bordered": c.onDark }]}
+							style={`background: var(${c.token});`}
+						></span>
+						<p class="swatch-name">{c.name}</p>
+						<p class="swatch-code">{c.hex}</p>
+						<p class="swatch-oklch">{c.oklch}</p>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="brand-section">
+			<h2>{brand.typeHeading}</h2>
+			<p class="brand-body">{brand.typeBody}</p>
+			<div class="specimens">
+				{fonts.map((f) => (
+					<div class="specimen">
+						<p class="specimen-sample" style={`font-family: ${f.stack};`}>Aa</p>
+						<p class="specimen-name">{f.name}</p>
+						<p class="specimen-role">{f.role}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class="brand-section">
+			<h2>{brand.voiceHeading}</h2>
+			<ul class="voice" role="list">
+				{brand.voice.map((v) => (
+					<li class="voice-item">
+						<p class="voice-title">{v.title}</p>
+						<p class="voice-body">{v.body}</p>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="brand-section">
+			<h2>{brand.namingHeading}</h2>
+			<p class="brand-body">{brand.namingBody}</p>
+			<div class="dos">
+				<div class="dos-col">
+					<p class="dos-label dos-label--do">{brand.dosLabel}</p>
+					<ul role="list">{brand.dos.map((d) => <li>{d}</li>)}</ul>
+				</div>
+				<div class="dos-col">
+					<p class="dos-label dos-label--dont">{brand.dontsLabel}</p>
+					<ul role="list">{brand.donts.map((d) => <li>{d}</li>)}</ul>
+				</div>
+			</div>
+		</section>
+	</article>
+</BaseLayout>

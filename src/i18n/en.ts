@@ -23,6 +23,7 @@ export const enMessages = {
   teamLink: "Team",
   sponsorLink: "Sponsors",
   contactLink: "Contact",
+  brandLink: "Brand",
   privacyLink: "Privacy",
   termsLink: "Terms",
   legalLabel: "Legal",
@@ -226,6 +227,56 @@ export const enMessages = {
           "If you have any questions about these terms, reach out through our Discord or GitHub community.",
         ],
       },
+    ],
+  },
+  brandKit: {
+    seo: {
+      title: "Brand | Asakiri",
+      description:
+        "How to use the Asakiri name, logo, colors, and type. A quick reference for contributors and anyone building on Asakiri.",
+    },
+    title: "Brand",
+    lede: "A quick reference for using the Asakiri name, logo, colors, and type. If you're contributing or building on Asakiri, start here.",
+    logoHeading: "Logo",
+    logoBody:
+      "Asakiri's mark is a green dew drop lit by a yellow sun, for the morning fog the name comes from. Keep it on its rounded tile, give it room to breathe, and pair it with the wordmark set in IBM Plex Sans. Don't recolor, rotate, or redraw it.",
+    logoDownload: "Download logo",
+    colorHeading: "Color",
+    colorBody:
+      "Green on paper. Brand green carries accents and calls to action, ink is for text, and paper is for backgrounds. Colors are defined in OKLCH, the source of truth; hex is provided for convenience.",
+    typeHeading: "Typography",
+    typeBody:
+      "Two typefaces. Newsreader, a warm serif, carries display and headings. IBM Plex Sans handles body text and interface.",
+    displayRole: "Display · headings",
+    bodyRole: "Body · interface & long-form",
+    voiceHeading: "Voice",
+    voice: [
+      {
+        title: "Calm and plain",
+        body: "Write simply. Prefer short, direct sentences over jargon and hype.",
+      },
+      {
+        title: "Explain, don't sell",
+        body: "Respect people's time and intelligence. We're here to teach and to help others teach.",
+      },
+      {
+        title: "Quietly warm",
+        body: "A little personality is welcome. Reach for restraint before exclamation marks.",
+      },
+    ],
+    namingHeading: "Using the name",
+    namingBody: "Asakiri, written 朝霧, means “morning fog” in Japanese. It's one word, with a capital A, and names both the project and the toolkit.",
+    dosLabel: "Do",
+    dontsLabel: "Don't",
+    dos: [
+      "Write it as “Asakiri”, with a capital A.",
+      "Use the leaf mark and wordmark as provided.",
+      "Link to asakiri.com when referencing the project.",
+    ],
+    donts: [
+      "Restyle, recolor, or redraw the logo.",
+      "Use the name or logo to imply endorsement or affiliation.",
+      "Stretch, rotate, or add effects to the mark.",
     ],
   },
   contact: {

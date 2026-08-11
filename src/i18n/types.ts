@@ -49,6 +49,37 @@ export interface SponsorContent {
   cta: string;
 }
 
+export interface BrandPrinciple {
+  title: string;
+  body: string;
+}
+
+export interface BrandContent {
+  seo: {
+    title: string;
+    description: string;
+  };
+  title: string;
+  lede: string;
+  logoHeading: string;
+  logoBody: string;
+  logoDownload: string;
+  colorHeading: string;
+  colorBody: string;
+  typeHeading: string;
+  typeBody: string;
+  displayRole: string;
+  bodyRole: string;
+  voiceHeading: string;
+  voice: BrandPrinciple[];
+  namingHeading: string;
+  namingBody: string;
+  dosLabel: string;
+  dontsLabel: string;
+  dos: string[];
+  donts: string[];
+}
+
 export interface ContactMethod {
   label: string;
   value: string;
@@ -119,6 +150,7 @@ export interface LandingMessages {
   teamLink: string;
   sponsorLink: string;
   contactLink: string;
+  brandLink: string;
   privacyLink: string;
   termsLink: string;
   legalLabel: string;
@@ -131,5 +163,6 @@ export interface LandingMessages {
   privacy: LegalContent;
   terms: LegalContent;
   contact: ContactContent;
+  brandKit: BrandContent;
   notFound: NotFoundContent;
 }
