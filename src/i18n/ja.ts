@@ -27,7 +27,7 @@ export const jaMessages = {
   privacyLink: "プライバシー",
   termsLink: "利用規約",
   legalLabel: "法的情報",
-  footer: "ことばを教え、学ぶ人たちのために。",
+  footer: "言語学習の展望",
   about: {
     seo: {
       title: "なぜアサキリをつくるのか | アサキリ",

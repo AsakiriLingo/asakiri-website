@@ -27,7 +27,7 @@ export const enMessages = {
   privacyLink: "Privacy",
   termsLink: "Terms",
   legalLabel: "Legal",
-  footer: "Made for the people who teach and learn languages.",
+  footer: "The open future of language learning.",
   about: {
     seo: {
       title: "Why Asakiri exists | Asakiri",
