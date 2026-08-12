@@ -13,6 +13,8 @@ export const jaMessages = {
   communityLabel: "コミュニティリンク",
   siteLinksLabel: "その他のページ",
   brand: "アサキリ",
+  brandRubyBase: "朝霧",
+  brandRubyText: "あさきり",
   title: "ことばの学びを、あなたのものに。",
   description:
     "アサキリは、ことばの学びのための場所です。豊かなメディアや練習問題を備えた、深く構造化されたコースで教え、無料の学習アプリで学べます。あなたがつくったものは、いつでも自分の手元に残ります。",

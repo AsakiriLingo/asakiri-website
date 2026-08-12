@@ -870,7 +870,7 @@ h1 {
 .footer-mast {
 	display: flex;
 	flex-direction: column;
-	gap: var(--space-xs);
+	gap: var(--space-sm);
 }
 
 .footer-wordmark,
@@ -884,6 +884,26 @@ h1 {
 	font-size: var(--text-lg);
 	font-weight: 500;
 	letter-spacing: -0.025em;
+}
+
+/* Furigana on the brand wordmark (Japanese) */
+.brand ruby,
+.footer-wordmark ruby {
+	ruby-align: center;
+	line-height: 1.5;
+}
+
+.brand ruby {
+	font-size: 1.5em;
+}
+
+.brand rt,
+.footer-wordmark rt {
+	margin-block-end: 0.15em;
+	font-size: 0.5em;
+	font-weight: 400;
+	letter-spacing: 0.06em;
+	color: var(--color-muted);
 }
 
 .footer-tagline,

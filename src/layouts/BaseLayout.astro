@@ -117,7 +117,11 @@ const structuredData = JSON.stringify({
 						width="36"
 						height="36"
 					/>
-					<span>{messages.brand}</span>
+					<span>
+						{messages.brandRubyText ? (
+							<ruby>{messages.brandRubyBase}<rt>{messages.brandRubyText}</rt></ruby>
+						) : messages.brand}
+					</span>
 				</a>
 				<nav class="site-nav" aria-label={messages.navigationLabel}>
 					<a
@@ -145,7 +149,11 @@ const structuredData = JSON.stringify({
 
 			<footer class="site-footer">
 				<div class="footer-mast">
-					<p class="footer-wordmark">{messages.brand}</p>
+					<p class="footer-wordmark">
+						{messages.brandRubyText ? (
+							<ruby>{messages.brandRubyBase}<rt>{messages.brandRubyText}</rt></ruby>
+						) : messages.brand}
+					</p>
 					<p class="footer-tagline">{messages.footer}</p>
 				</div>
 				<div class="footer-nav">

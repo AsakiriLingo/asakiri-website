@@ -142,6 +142,8 @@ export interface LandingMessages {
   communityLabel: string;
   siteLinksLabel: string;
   brand: string;
+  brandRubyBase?: string;
+  brandRubyText?: string;
   title: string;
   description: string;
   comingSoon: string;
