@@ -149,6 +149,14 @@ export interface LandingMessages {
   comingSoon: string;
   githubLink: string;
   githubAriaLabel: string;
+  download: {
+    label: string;
+    ariaLabel: string;
+    menuLabel: string;
+    macos: string;
+    windows: string;
+    linux: string;
+  };
   aboutLink: string;
   teamLink: string;
   sponsorLink: string;

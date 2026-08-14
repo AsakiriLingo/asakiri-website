@@ -245,6 +245,107 @@ h1 {
 	transform: translateY(var(--space-3xs));
 }
 
+.download {
+	position: relative;
+	display: inline-flex;
+}
+
+.download-button {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+	min-height: var(--size-touch);
+	padding-inline: var(--space-lg);
+	border: var(--rule-thin) solid var(--color-brand);
+	border-radius: var(--radius-action);
+	color: var(--color-brand-ink);
+	background: var(--color-brand);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	list-style: none;
+	transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+}
+
+.download-button::-webkit-details-marker {
+	display: none;
+}
+
+.download-button:hover {
+	background: var(--color-brand-hover);
+	border-color: var(--color-brand-hover);
+}
+
+.download-button:active {
+	transform: translateY(var(--space-3xs));
+}
+
+.download-button:focus-visible {
+	outline: var(--rule-focus) solid var(--color-focus);
+	outline-offset: var(--space-2xs);
+}
+
+.download-caret {
+	transition: transform var(--dur-short) var(--ease-out);
+}
+
+.download[open] .download-caret {
+	transform: rotate(180deg);
+}
+
+.download-menu {
+	position: absolute;
+	top: calc(100% + var(--space-2xs));
+	left: 0;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	min-width: 13rem;
+	margin: 0;
+	padding: var(--space-2xs);
+	list-style: none;
+	border: var(--rule-thin) solid var(--color-rule);
+	border-radius: var(--radius-action);
+	background: var(--color-paper);
+}
+
+.download-menu a {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: var(--space-md);
+	padding: var(--space-xs) var(--space-sm);
+	border-radius: var(--radius-action);
+	color: var(--color-ink);
+	font-size: var(--text-sm);
+	font-weight: 600;
+	white-space: nowrap;
+	text-decoration: none;
+	transition: color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+
+.download-menu a:hover {
+	color: var(--color-brand-ink);
+	background: var(--color-brand);
+}
+
+.download-format {
+	color: var(--color-muted);
+	font-weight: 400;
+	font-variant-numeric: tabular-nums;
+}
+
+.download-menu a:hover .download-format {
+	color: var(--color-brand-ink);
+}
+
+.download-menu a:focus-visible {
+	outline: var(--rule-focus) solid var(--color-focus);
+	outline-offset: calc(var(--space-3xs) * -1);
+}
+
 .about {
 	width: min(100%, 46rem);
 	margin-inline: auto;

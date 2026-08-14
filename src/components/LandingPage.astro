@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { LandingMessages } from "../i18n/types";
-import { githubUrl } from "../config";
+import { studioDownloads } from "../config";
 
 interface Props {
   locale: "en" | "ja";
@@ -19,11 +19,46 @@ const { locale, messages } = Astro.props;
 		<div class="hero-note">
 			<p class="hero-description">{messages.description}</p>
 			<div class="hero-actions">
-				<span class="status"><span class="status-dot" aria-hidden="true"></span>{messages.comingSoon}</span>
-				<a class="github-button" href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={messages.githubAriaLabel}>
-					{messages.githubLink} <span aria-hidden="true">↗</span>
-				</a>
+				<details class="download">
+					<summary class="download-button" aria-label={messages.download.ariaLabel}>
+						<span>{messages.download.label}</span>
+						<span class="download-caret" aria-hidden="true">▾</span>
+					</summary>
+					<ul class="download-menu" aria-label={messages.download.menuLabel}>
+						{studioDownloads.map((item) => (
+							<li>
+								<a href={item.url} target="_blank" rel="noopener noreferrer">
+									<span>{messages.download[item.platform]}</span>
+									<span class="download-format">{item.format}</span>
+								</a>
+							</li>
+						))}
+					</ul>
+				</details>
 			</div>
 		</div>
 	</section>
 </BaseLayout>
+
+<script>
+	const closeMenus = (except) => {
+		document.querySelectorAll("details.download[open]").forEach((menu) => {
+			if (menu !== except) menu.removeAttribute("open");
+		});
+	};
+
+	document.addEventListener("click", (event) => {
+		const target = event.target;
+		const inside = target instanceof Element ? target.closest("details.download") : null;
+		closeMenus(inside);
+	});
+
+	document.addEventListener("keydown", (event) => {
+		if (event.key !== "Escape") return;
+		document.querySelectorAll("details.download[open]").forEach((menu) => {
+			menu.removeAttribute("open");
+			const summary = menu.querySelector("summary");
+			if (summary instanceof HTMLElement) summary.focus();
+		});
+	});
+</script>
