@@ -162,6 +162,7 @@ export interface LandingMessages {
   sponsorLink: string;
   contactLink: string;
   brandLink: string;
+  docsLink: string;
   privacyLink: string;
   termsLink: string;
   legalLabel: string;

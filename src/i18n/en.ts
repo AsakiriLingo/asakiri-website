@@ -32,6 +32,7 @@ export const enMessages = {
   sponsorLink: "Sponsors",
   contactLink: "Contact",
   brandLink: "Brand",
+  docsLink: "Docs",
   privacyLink: "Privacy",
   termsLink: "Terms",
   legalLabel: "Legal",

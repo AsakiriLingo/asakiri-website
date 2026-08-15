@@ -34,6 +34,7 @@ export const jaMessages = {
   sponsorLink: "スポンサー",
   contactLink: "お問い合わせ",
   brandLink: "ブランド",
+  docsLink: "ドキュメント",
   privacyLink: "プライバシー",
   termsLink: "利用規約",
   legalLabel: "法的情報",

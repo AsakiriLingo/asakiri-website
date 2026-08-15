@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import type { LandingMessages } from "../i18n/types";
-import { githubUrl, discordUrl, patreonUrl, linkedinUrl } from "../config";
+import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl } from "../config";
 
 interface Props {
   locale: "en" | "ja";
@@ -173,6 +173,7 @@ const structuredData = JSON.stringify({
 						<a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a>
 						<a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a>
 						<a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+						<a href={docsUrl} target="_blank" rel="noopener noreferrer">{messages.docsLink} <span aria-hidden="true">↗</span></a>
 						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
 					</nav>
 				</div>

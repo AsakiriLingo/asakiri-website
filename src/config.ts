@@ -1,4 +1,5 @@
 export const githubUrl = "https://github.com/AsakiriLingo/asakiri-studio";
+export const docsUrl = "https://docs.asakiri.com";
 
 export const studioVersion = "0.1.9";
 
