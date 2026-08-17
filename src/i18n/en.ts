@@ -29,6 +29,7 @@ export const enMessages = {
   },
   aboutLink: "About",
   teamLink: "Team",
+  fundingLink: "Funding",
   sponsorLink: "Sponsors",
   contactLink: "Contact",
   brandLink: "Brand",
@@ -128,6 +129,105 @@ export const enMessages = {
       },
     ],
   },
+  funding: {
+    seo: {
+      title: "Funding · Asakiri",
+      description:
+        "Why Asakiri is built as public goods, what exists today, and the milestones funding would pay for.",
+    },
+    label: "Funding",
+    title: "Fund the tools, not the walled garden",
+    lede: "Asakiri is an open authoring app, an open course format, and an open learner app. Funding goes to finishing that chain so a teacher never has to rent their own course back from a platform.",
+    problemHeading: "The problem",
+    problemBody: [
+      "Most language-learning platforms own both halves: the software and the courses made with it. A teacher who spends a year building a course cannot take it elsewhere, cannot read it without the app, and cannot hand it to their community in a form that outlives the company.",
+      "Small language communities come off worst. A language with ten thousand speakers is not a market, so no platform builds for it. Teachers end up with a folder of slides, a spreadsheet of vocabulary, and no way to turn either into something a learner can practise with.",
+    ],
+    chainHeading: "What Asakiri changes",
+    chainIntro:
+      "Every step is separable, and every step is replaceable. Nothing in the chain requires an Asakiri account, an Asakiri server, or Asakiri's permission.",
+    chain: [
+      { step: "Teacher", note: "Owns the course and picks its licence" },
+      { step: "Asakiri Studio", note: "Open source desktop editor, works offline" },
+      { step: "Open course format", note: "Plain JSON files, published schemas" },
+      { step: "Git, GitHub, a USB stick", note: "Storage is the author's choice" },
+      { step: "Asakiri Learner or any client", note: "Open format means anyone can build one" },
+    ],
+    chainNote:
+      "A course is a directory of small JSON files on the author's own disk. It is readable in a text editor, diffable in Git, and valid against schemas anyone can check against.",
+    goodsHeading: "The public goods",
+    goodsIntro: "Five artefacts, each usable without the others.",
+    goods: [
+      {
+        name: "Authoring software",
+        body: "Asakiri Studio: content records, media, rich text, and seven kinds of graded exercise, on macOS, Windows, and Linux. MPL-2.0.",
+        status: "Alpha, released",
+      },
+      {
+        name: "Course format and schemas",
+        body: "Version 1 of the on-disk format, with JSON Schemas so validators, editors, and players can be built against a contract rather than by reading our source.",
+        status: "Published",
+      },
+      {
+        name: "Learner application",
+        body: "An open source client that reads the format, runs the exercises, and tracks progress by stable IDs so reordering a course never loses a learner's place.",
+        status: "In development",
+      },
+      {
+        name: "Documentation and tooling",
+        body: "A docs site covering the data model and the wire format, a course validator, and the deterministic importers that turn spreadsheets and documents into courses.",
+        status: "Partly shipped",
+      },
+      {
+        name: "Freely distributable courses",
+        body: "Authors choose their own open licence and publish a course as a Git tag anyone can clone. No registry gatekeeping, no revenue share.",
+        status: "By design",
+      },
+    ],
+    fundingHeading: "What funding enables",
+    fundingIntro:
+      "Studio is built and shipping. The gap is the other end of the chain, and the packaging work that makes both ends trustworthy to install.",
+    milestoneColumns: { name: "Milestone", ships: "What ships", effort: "Effort" },
+    milestones: [
+      {
+        name: "Learner application, first release",
+        ships:
+          "A client that opens any format-v1 course offline, runs all seven exercise types, and keeps progress keyed to stable IDs. Android and iOS from one Flutter codebase.",
+        effort: "4 months",
+      },
+      {
+        name: "Import from documents",
+        ships:
+          "Turn a PDF, Word file, or slide deck into lessons and rich text, with a mapping step the author confirms before anything is written. Deterministic parsing, no model involved.",
+        effort: "2 months",
+      },
+      {
+        name: "Multilingual course authoring",
+        ships:
+          "The format already stores text per language. This adds the editing surface, so one course can carry Japanese and English interface text and a translator can work without touching JSON.",
+        effort: "1.5 months",
+      },
+      {
+        name: "Signed, packaged, installable",
+        ships:
+          "Windows code signing so installs stop warning, plus Flathub and Snap packaging for Linux. Removes the largest install-time barrier for non-technical teachers.",
+        effort: "1 month",
+      },
+      {
+        name: "Format spec and reference tooling",
+        ships:
+          "A versioned spec site, a standalone command-line validator, and a reference reader library, so a third party can build a compatible client without reading Studio's source.",
+        effort: "1.5 months",
+      },
+    ],
+    ctaHeading: "Talk to us",
+    ctaBody:
+      "For grants, partnerships, or anything that needs a conversation, email is best. For ongoing support, Patreon funds the same work at whatever scale you like.",
+    ctaEmail: "Email alok@asakiri.com",
+    ctaPatreon: "Support on Patreon",
+    ctaRepo: "Read the source",
+  },
+
   sponsor: {
     seo: {
       title: "Sponsors | Asakiri",

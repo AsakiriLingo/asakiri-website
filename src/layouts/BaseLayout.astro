@@ -6,7 +6,7 @@ import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl } from "../conf
 interface Props {
   locale: "en" | "ja";
   messages: LandingMessages;
-  page: "home" | "about" | "mission" | "vision" | "team" | "sponsor" | "contact" | "brand" | "privacy" | "terms" | "404";
+  page: "home" | "about" | "mission" | "vision" | "team" | "funding" | "sponsor" | "contact" | "brand" | "privacy" | "terms" | "404";
   seo: { title: string; description: string };
   schemaType?: string;
   noindex?: boolean;
@@ -20,6 +20,7 @@ const paths = {
   mission: { en: "/mission/", ja: "/ja/mission/" },
   vision: { en: "/vision/", ja: "/ja/vision/" },
   team: { en: "/team/", ja: "/ja/team/" },
+  funding: { en: "/funding/", ja: "/ja/funding/" },
   sponsor: { en: "/sponsor/", ja: "/ja/sponsor/" },
   contact: { en: "/contact/", ja: "/ja/contact/" },
   brand: { en: "/brand/", ja: "/ja/brand/" },
@@ -34,6 +35,7 @@ const aboutUrl = paths.about[locale];
 const missionUrl = paths.mission[locale];
 const visionUrl = paths.vision[locale];
 const teamUrl = paths.team[locale];
+const fundingUrl = paths.funding[locale];
 const sponsorUrl = paths.sponsor[locale];
 const contactUrl = paths.contact[locale];
 const brandUrl = paths.brand[locale];
@@ -165,6 +167,7 @@ const structuredData = JSON.stringify({
 				<div class="footer-nav">
 					<nav class="footer-links" aria-label={messages.siteLinksLabel}>
 						<a href={teamUrl} aria-current={page === "team" ? "page" : undefined}>{messages.teamLink}</a>
+						<a href={fundingUrl} aria-current={page === "funding" ? "page" : undefined}>{messages.fundingLink}</a>
 						<a href={sponsorUrl} aria-current={page === "sponsor" ? "page" : undefined}>{messages.sponsorLink}</a>
 						<a href={contactUrl} aria-current={page === "contact" ? "page" : undefined}>{messages.contactLink}</a>
 						<a href={brandUrl} aria-current={page === "brand" ? "page" : undefined}>{messages.brandLink}</a>

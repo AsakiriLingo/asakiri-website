@@ -776,7 +776,8 @@ h1 {
 }
 
 .sponsor-cta,
-.notfound-home {
+.notfound-home,
+.funding-cta {
 	display: inline-flex;
 	align-items: center;
 	gap: var(--space-xs);
@@ -796,14 +797,16 @@ h1 {
 }
 
 .sponsor-cta:hover,
-.notfound-home:hover {
+.notfound-home:hover,
+.funding-cta:hover {
 	color: var(--color-brand-ink);
 	background: var(--color-brand-hover);
 	border-color: var(--color-brand-hover);
 }
 
 .sponsor-cta:active,
-.notfound-home:active {
+.notfound-home:active,
+.funding-cta:active {
 	transform: translateY(var(--space-3xs));
 }
 
@@ -1103,5 +1106,230 @@ h1 {
 		transition-duration: 0.01ms !important;
 		animation-duration: 0.01ms !important;
 		animation-iteration-count: 1 !important;
+	}
+}
+
+.funding {
+	width: min(100%, 64rem);
+	margin-inline: auto;
+	padding-block: var(--space-2xl) var(--space-3xl);
+	padding-inline-start: max(var(--page-gutter), env(safe-area-inset-left));
+	padding-inline-end: max(var(--page-gutter), env(safe-area-inset-right));
+}
+
+.funding-label {
+	margin: 0;
+	color: var(--color-brand);
+	font-size: var(--text-xs);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.funding-head h1 {
+	max-width: 34ch;
+	margin: var(--space-sm) 0 0;
+	font-family: var(--font-display);
+	font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+	font-weight: 400;
+	letter-spacing: -0.03em;
+	line-height: 1.05;
+	text-wrap: balance;
+}
+
+.funding-lede {
+	margin: var(--space-lg) 0 0;
+	max-width: var(--measure-body);
+	font-family: var(--font-display);
+	font-size: clamp(var(--text-md), 2.2vw, var(--text-lg));
+	font-weight: 400;
+	line-height: 1.45;
+	text-wrap: pretty;
+}
+
+.funding-section {
+	margin: var(--space-2xl) 0 0;
+	padding: var(--space-xl) 0 0;
+	border-block-start: var(--rule-thin) solid var(--color-rule);
+}
+
+.funding-section h2 {
+	margin: 0;
+	font-family: var(--font-display);
+	font-size: clamp(1.5rem, 2.6vw, 2rem);
+	font-weight: 400;
+	letter-spacing: -0.02em;
+}
+
+.funding-subheading {
+	margin: var(--space-xl) 0 0;
+	font-family: var(--font-display);
+	font-size: var(--text-md);
+	font-weight: 400;
+}
+
+.funding-prose {
+	margin: var(--space-md) 0 0;
+	max-width: var(--measure-body);
+	color: var(--color-ink-2);
+	line-height: 1.6;
+	text-wrap: pretty;
+}
+
+.funding-prose p {
+	margin: var(--space-md) 0 0;
+	color: inherit;
+	line-height: inherit;
+	text-wrap: inherit;
+}
+
+.funding-prose p:first-child {
+	margin-block-start: 0;
+}
+
+.funding-chain {
+	display: grid;
+	gap: var(--space-sm);
+	margin: var(--space-lg) 0 0;
+	padding: 0;
+	list-style: none;
+	counter-reset: chain;
+}
+
+.funding-chain-step {
+	display: grid;
+	grid-template-columns: 1.5rem minmax(0, 14rem) minmax(0, 1fr);
+	align-items: baseline;
+	gap: var(--space-xs) var(--space-md);
+	padding-block: var(--space-xs);
+	counter-increment: chain;
+}
+
+.funding-chain-step::before {
+	content: counter(chain);
+	color: var(--color-brand);
+	font-size: var(--text-xs);
+	font-variant-numeric: tabular-nums;
+}
+
+.funding-chain-name {
+	font-family: var(--font-display);
+	font-size: var(--text-md);
+	line-height: 1.35;
+}
+
+.funding-chain-note {
+	color: var(--color-muted);
+	font-size: var(--text-sm);
+	line-height: 1.5;
+}
+
+.funding-goods {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+	gap: var(--space-lg) var(--space-2xl);
+	margin: var(--space-lg) 0 0;
+	padding: 0;
+	list-style: none;
+}
+
+.funding-good-head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: var(--space-xs) var(--space-sm);
+	margin: 0;
+}
+
+.funding-good-name {
+	font-family: var(--font-display);
+	font-size: var(--text-md);
+	line-height: 1.35;
+}
+
+.funding-good-status {
+	color: var(--color-brand);
+	font-size: var(--text-xs);
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+}
+
+.funding-good-body {
+	margin: var(--space-xs) 0 0;
+	color: var(--color-ink-2);
+	font-size: var(--text-sm);
+	line-height: 1.55;
+	text-wrap: pretty;
+}
+
+.funding-table-wrap {
+	overflow-x: auto;
+	margin: var(--space-lg) 0 0;
+}
+
+.funding-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: var(--text-sm);
+	text-align: start;
+}
+
+.funding-table th,
+.funding-table td {
+	padding: var(--space-sm) var(--space-md) var(--space-sm) 0;
+	border-block-end: var(--rule-thin) solid var(--color-rule);
+	text-align: start;
+	vertical-align: top;
+}
+
+.funding-table thead th {
+	color: var(--color-muted);
+	font-size: var(--text-xs);
+	font-weight: 400;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.funding-table tbody th {
+	min-width: 12rem;
+	font-family: var(--font-display);
+	font-size: var(--text-md);
+	font-weight: 400;
+	line-height: 1.35;
+	text-wrap: pretty;
+}
+
+.funding-table td {
+	color: var(--color-ink-2);
+	line-height: 1.55;
+}
+
+.funding-cell-tight {
+	white-space: nowrap;
+}
+
+.funding-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--space-md) var(--space-lg);
+	margin: var(--space-lg) 0 0;
+}
+
+.funding-cta {
+	margin-block-start: 0;
+}
+
+.funding-link {
+	font-size: var(--text-sm);
+}
+
+@media (max-width: 40rem) {
+	.funding-chain-step {
+		grid-template-columns: 1.5rem minmax(0, 1fr);
+	}
+
+	.funding-chain-note {
+		grid-column: 2;
 	}
 }

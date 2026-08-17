@@ -1,0 +1,109 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { LandingMessages } from "../i18n/types";
+import { contactEmail, githubUrl, patreonJoinUrl } from "../config";
+
+interface Props {
+  locale: "en" | "ja";
+  messages: LandingMessages;
+}
+
+const { locale, messages } = Astro.props;
+const funding = messages.funding;
+---
+
+<BaseLayout
+	locale={locale}
+	messages={messages}
+	page="funding"
+	seo={funding.seo}
+	schemaType="WebPage"
+>
+	<article class="funding">
+		<header class="funding-head">
+			<p class="funding-label">{funding.label}</p>
+			<h1>{funding.title}</h1>
+			<p class="funding-lede">{funding.lede}</p>
+		</header>
+
+		<section class="funding-section">
+			<h2>{funding.problemHeading}</h2>
+			<div class="funding-prose">
+				{funding.problemBody.map((paragraph) => <p>{paragraph}</p>)}
+			</div>
+		</section>
+
+		<section class="funding-section">
+			<h2>{funding.chainHeading}</h2>
+			<p class="funding-prose">{funding.chainIntro}</p>
+			<ol class="funding-chain">
+				{funding.chain.map((link) => (
+					<li class="funding-chain-step">
+						<span class="funding-chain-name">{link.step}</span>
+						<span class="funding-chain-note">{link.note}</span>
+					</li>
+				))}
+			</ol>
+			<p class="funding-prose">{funding.chainNote}</p>
+		</section>
+
+		<section class="funding-section">
+			<h2>{funding.goodsHeading}</h2>
+			<p class="funding-prose">{funding.goodsIntro}</p>
+			<ul class="funding-goods">
+				{funding.goods.map((good) => (
+					<li class="funding-good">
+						<p class="funding-good-head">
+							<span class="funding-good-name">{good.name}</span>
+							<span class="funding-good-status">{good.status}</span>
+						</p>
+						<p class="funding-good-body">{good.body}</p>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="funding-section">
+			<h2>{funding.fundingHeading}</h2>
+			<p class="funding-prose">{funding.fundingIntro}</p>
+
+			<div class="funding-table-wrap">
+				<table class="funding-table">
+					<thead>
+						<tr>
+							<th scope="col">{funding.milestoneColumns.name}</th>
+							<th scope="col">{funding.milestoneColumns.ships}</th>
+							<th scope="col">{funding.milestoneColumns.effort}</th>
+						</tr>
+					</thead>
+					<tbody>
+						{funding.milestones.map((milestone) => (
+							<tr>
+								<th scope="row">{milestone.name}</th>
+								<td>{milestone.ships}</td>
+								<td class="funding-cell-tight">{milestone.effort}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section class="funding-section funding-section--cta">
+			<h2>{funding.ctaHeading}</h2>
+			<p class="funding-prose">{funding.ctaBody}</p>
+			<div class="funding-actions">
+				<a class="funding-cta" href={`mailto:${contactEmail}`}>{funding.ctaEmail}</a>
+				<a
+					class="funding-link"
+					href={patreonJoinUrl}
+					target="_blank"
+					rel="noopener noreferrer">{funding.ctaPatreon} <span aria-hidden="true">↗</span></a
+				>
+				<a class="funding-link" href={githubUrl} target="_blank" rel="noopener noreferrer"
+					>{funding.ctaRepo} <span aria-hidden="true">↗</span></a
+				>
+			</div>
+		</section>
+	</article>
+</BaseLayout>
