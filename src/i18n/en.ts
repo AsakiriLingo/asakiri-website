@@ -38,6 +38,54 @@ export const enMessages = {
   termsLink: "Terms",
   legalLabel: "Legal",
   footer: "The open future of language learning.",
+  showcase: {
+    label: "Asakiri Studio",
+    title: "Everything you need to build a course.",
+    lede:
+      "Studio is the desktop app for teaching a language. Author lessons, reusable content, media, and interactive exercises, all on your own machine.",
+    items: [
+      {
+        title: "Structure the whole course",
+        body:
+          "Group lessons into units, then arrange each lesson's parts by dragging. The outline stays clear as the course grows.",
+        image: "/mocks/studio-course-structure.webp",
+        imageAlt:
+          "Asakiri Studio showing a Beginner Italian course outline with units and lessons.",
+      },
+      {
+        title: "Write lessons with a live preview",
+        body:
+          "A focused editor for rich text and references, with a learner preview beside every part so you see exactly what students will.",
+        image: "/mocks/studio-lesson-editor.webp",
+        imageAlt:
+          "The Asakiri Studio lesson editor with a rich text part and a learner preview panel.",
+      },
+      {
+        title: "Build exercises that check themselves",
+        body:
+          "Multiple choice, listening, matching, word order, and more. Each exercise pulls from your content and previews as you edit.",
+        image: "/mocks/studio-exercise-editor.webp",
+        imageAlt:
+          "A multiple choice exercise being edited in Asakiri Studio with answer options and a preview.",
+      },
+      {
+        title: "Reuse content everywhere",
+        body:
+          "Keep vocabulary and phrases in collections, then pull the same entries into any lesson, media block, or exercise.",
+        image: "/mocks/studio-content-library.webp",
+        imageAlt:
+          "The Asakiri Studio content library listing Italian vocabulary with images and tags.",
+      },
+      {
+        title: "Bring in real media",
+        body:
+          "Search Unsplash photos and Tatoeba audio, record your own, or import files. Everything stays local to your project.",
+        image: "/mocks/studio-media-library.webp",
+        imageAlt:
+          "The Asakiri Studio media library with photos and audio clips and an add media menu open.",
+      },
+    ],
+  },
   about: {
     seo: {
       title: "Why Asakiri exists | Asakiri",

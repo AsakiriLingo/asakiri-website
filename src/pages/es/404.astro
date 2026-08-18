@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { esMessages } from "../../i18n/es";
+
+const nf = esMessages.notFound;
+---
+
+<BaseLayout locale="es" messages={esMessages} page="404" seo={nf.seo} schemaType="WebPage" noindex>
+	<article class="notfound">
+		<p class="notfound-label">{nf.label}</p>
+		<h1 class="notfound-title">{nf.title}</h1>
+		<p class="notfound-body">{nf.body}</p>
+		<a class="notfound-home" href="/es/">{nf.homeLink}</a>
+	</article>
+</BaseLayout>

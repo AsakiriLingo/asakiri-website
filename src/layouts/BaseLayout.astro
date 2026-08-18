@@ -1,10 +1,10 @@
 ---
 import "../styles/global.css";
-import type { LandingMessages } from "../i18n/types";
+import type { LandingMessages, Locale } from "../i18n/types";
 import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl } from "../config";
 
 interface Props {
-  locale: "en" | "ja";
+  locale: Locale;
   messages: LandingMessages;
   page: "home" | "about" | "mission" | "vision" | "team" | "funding" | "sponsor" | "contact" | "brand" | "privacy" | "terms" | "404";
   seo: { title: string; description: string };
@@ -14,46 +14,80 @@ interface Props {
 
 const { locale, messages, page, seo, schemaType = "WebSite", noindex = false } = Astro.props;
 
-const paths = {
-  home: { en: "/", ja: "/ja/" },
-  about: { en: "/about/", ja: "/ja/about/" },
-  mission: { en: "/mission/", ja: "/ja/mission/" },
-  vision: { en: "/vision/", ja: "/ja/vision/" },
-  team: { en: "/team/", ja: "/ja/team/" },
-  funding: { en: "/funding/", ja: "/ja/funding/" },
-  sponsor: { en: "/sponsor/", ja: "/ja/sponsor/" },
-  contact: { en: "/contact/", ja: "/ja/contact/" },
-  brand: { en: "/brand/", ja: "/ja/brand/" },
-  privacy: { en: "/privacy/", ja: "/ja/privacy/" },
-  terms: { en: "/terms/", ja: "/ja/terms/" },
+const LOCALES = ["en", "ja", "es", "it", "pt"] as const satisfies readonly Locale[];
+const LOCALE_NAMES: Record<Locale, string> = {
+  en: "English",
+  ja: "日本語",
+  es: "Español",
+  it: "Italiano",
+  pt: "Português",
+};
+const BCP47: Record<Locale, string> = {
+  en: "en-US",
+  ja: "ja-JP",
+  es: "es-ES",
+  it: "it-IT",
+  pt: "pt-PT",
+};
+const OG_LOCALE: Record<Locale, string> = {
+  en: "en_US",
+  ja: "ja_JP",
+  es: "es_ES",
+  it: "it_IT",
+  pt: "pt_PT",
+};
+const LANGUAGE_MENU_LABEL: Record<Locale, string> = {
+  en: "Language",
+  ja: "言語",
+  es: "Idioma",
+  it: "Lingua",
+  pt: "Idioma",
+};
+
+const basePaths = {
+  home: "/",
+  about: "/about/",
+  mission: "/mission/",
+  vision: "/vision/",
+  team: "/team/",
+  funding: "/funding/",
+  sponsor: "/sponsor/",
+  contact: "/contact/",
+  brand: "/brand/",
+  privacy: "/privacy/",
+  terms: "/terms/",
 } as const;
+type PageKey = keyof typeof basePaths;
 
-const pathEntry = paths[page as keyof typeof paths] ?? paths.home;
+const localizedPath = (key: PageKey, loc: Locale) =>
+  loc === "en" ? basePaths[key] : `/${loc}${basePaths[key]}`;
 
-const homeUrl = locale === "ja" ? "/ja/" : "/";
-const aboutUrl = paths.about[locale];
-const missionUrl = paths.mission[locale];
-const visionUrl = paths.vision[locale];
-const teamUrl = paths.team[locale];
-const fundingUrl = paths.funding[locale];
-const sponsorUrl = paths.sponsor[locale];
-const contactUrl = paths.contact[locale];
-const brandUrl = paths.brand[locale];
-const privacyUrl = paths.privacy[locale];
-const termsUrl = paths.terms[locale];
-const alternateLocale = locale === "ja" ? "en" : "ja";
-const alternateUrl = pathEntry[alternateLocale];
+const pageKey: PageKey = page in basePaths ? (page as PageKey) : "home";
+
+const homeUrl = localizedPath("home", locale);
+const aboutUrl = localizedPath("about", locale);
+const missionUrl = localizedPath("mission", locale);
+const visionUrl = localizedPath("vision", locale);
+const teamUrl = localizedPath("team", locale);
+const fundingUrl = localizedPath("funding", locale);
+const sponsorUrl = localizedPath("sponsor", locale);
+const contactUrl = localizedPath("contact", locale);
+const brandUrl = localizedPath("brand", locale);
+const privacyUrl = localizedPath("privacy", locale);
+const termsUrl = localizedPath("terms", locale);
 
 const siteUrl = Astro.site ?? new URL("https://www.asakiri.com");
-const canonicalUrl = new URL(pathEntry[locale], siteUrl);
-const englishUrl = new URL(pathEntry.en, siteUrl);
-const japaneseUrl = new URL(pathEntry.ja, siteUrl);
+const canonicalUrl = new URL(localizedPath(pageKey, locale), siteUrl);
+const englishUrl = new URL(localizedPath(pageKey, "en"), siteUrl);
+const localeAlternates = LOCALES.map((loc) => ({
+  locale: loc,
+  hreflang: BCP47[loc],
+  href: new URL(localizedPath(pageKey, loc), siteUrl).href,
+}));
 
 const socialImage = locale === "ja"
   ? { url: new URL("/og-ja.png", siteUrl), width: "2400", height: "1260" }
   : { url: new URL("/og-image.png", siteUrl), width: "2400", height: "1260" };
-const ogLocale = locale === "ja" ? "ja_JP" : "en_US";
-const alternateOgLocale = locale === "ja" ? "en_US" : "ja_JP";
 
 const structuredData = JSON.stringify({
   "@context": "https://schema.org",
@@ -61,7 +95,7 @@ const structuredData = JSON.stringify({
   name: messages.brand,
   url: canonicalUrl.href,
   description: seo.description,
-  inLanguage: locale === "ja" ? "ja-JP" : "en-US",
+  inLanguage: BCP47[locale],
 }).replace(/</g, "\\u003c");
 ---
 
@@ -77,8 +111,9 @@ const structuredData = JSON.stringify({
 		{!noindex && (
 			<>
 				<link rel="canonical" href={canonicalUrl.href} />
-				<link rel="alternate" hreflang="en-US" href={englishUrl.href} />
-				<link rel="alternate" hreflang="ja-JP" href={japaneseUrl.href} />
+				{localeAlternates.map((alt) => (
+					<link rel="alternate" hreflang={alt.hreflang} href={alt.href} />
+				))}
 				<link rel="alternate" hreflang="x-default" href={englishUrl.href} />
 			</>
 		)}
@@ -89,8 +124,10 @@ const structuredData = JSON.stringify({
 		<meta property="og:title" content={seo.title} />
 		<meta property="og:description" content={seo.description} />
 		<meta property="og:url" content={canonicalUrl.href} />
-		<meta property="og:locale" content={ogLocale} />
-		<meta property="og:locale:alternate" content={alternateOgLocale} />
+		<meta property="og:locale" content={OG_LOCALE[locale]} />
+		{LOCALES.filter((loc) => loc !== locale).map((loc) => (
+			<meta property="og:locale:alternate" content={OG_LOCALE[loc]} />
+		))}
 		<meta property="og:image" content={socialImage.url.href} />
 		<meta property="og:image:secure_url" content={socialImage.url.href} />
 		<meta property="og:image:type" content="image/png" />
@@ -147,7 +184,24 @@ const structuredData = JSON.stringify({
 						target="_blank"
 						rel="noopener noreferrer"
 					>GitHub <span aria-hidden="true">↗</span></a>
-					<a class="language-link" href={alternateUrl}>{messages.alternateLocaleName}</a>
+					<details class="language">
+						<summary class="language-button" aria-label={LANGUAGE_MENU_LABEL[locale]}>
+							<span>{LOCALE_NAMES[locale]}</span>
+							<span class="language-caret" aria-hidden="true">▾</span>
+						</summary>
+						<ul class="language-menu">
+							{LOCALES.map((loc) => (
+								<li>
+									<a
+										href={localizedPath(pageKey, loc)}
+										hreflang={BCP47[loc]}
+										lang={loc}
+										aria-current={loc === locale ? "true" : undefined}
+									>{LOCALE_NAMES[loc]}</a>
+								</li>
+							))}
+						</ul>
+					</details>
 				</nav>
 			</header>
 
@@ -189,5 +243,27 @@ const structuredData = JSON.stringify({
 				</div>
 			</footer>
 		</div>
+		<script>
+			const closeLanguageMenus = (except: Element | null) => {
+				document.querySelectorAll("details.language[open]").forEach((menu) => {
+					if (menu !== except) menu.removeAttribute("open");
+				});
+			};
+
+			document.addEventListener("click", (event) => {
+				const target = event.target;
+				const inside = target instanceof Element ? target.closest("details.language") : null;
+				closeLanguageMenus(inside);
+			});
+
+			document.addEventListener("keydown", (event) => {
+				if (event.key !== "Escape") return;
+				document.querySelectorAll("details.language[open]").forEach((menu) => {
+					menu.removeAttribute("open");
+					const summary = menu.querySelector("summary");
+					if (summary instanceof HTMLElement) summary.focus();
+				});
+			});
+		</script>
 	</body>
 </html>

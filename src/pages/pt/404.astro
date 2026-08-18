@@ -1,0 +1,15 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { ptMessages } from "../../i18n/pt";
+
+const nf = ptMessages.notFound;
+---
+
+<BaseLayout locale="pt" messages={ptMessages} page="404" seo={nf.seo} schemaType="WebPage" noindex>
+	<article class="notfound">
+		<p class="notfound-label">{nf.label}</p>
+		<h1 class="notfound-title">{nf.title}</h1>
+		<p class="notfound-body">{nf.body}</p>
+		<a class="notfound-home" href="/pt/">{nf.homeLink}</a>
+	</article>
+</BaseLayout>

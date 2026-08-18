@@ -1,3 +1,5 @@
+export type Locale = "en" | "ja" | "es" | "it" | "pt";
+
 export interface AboutSection {
   heading: string;
   body: string[];
@@ -164,6 +166,20 @@ export interface TeamContent {
   members: TeamMember[];
 }
 
+export interface ShowcaseItem {
+  title: string;
+  body: string;
+  image: string;
+  imageAlt: string;
+}
+
+export interface ShowcaseContent {
+  label: string;
+  title: string;
+  lede: string;
+  items: ShowcaseItem[];
+}
+
 export interface LandingMessages {
   seo: {
     title: string;
@@ -202,6 +218,7 @@ export interface LandingMessages {
   termsLink: string;
   legalLabel: string;
   footer: string;
+  showcase: ShowcaseContent;
   about: AboutContent;
   mission: StatementContent;
   vision: StatementContent;

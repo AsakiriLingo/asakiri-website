@@ -1,19 +1,33 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import type { LandingMessages } from "../i18n/types";
+import type { LandingMessages, Locale } from "../i18n/types";
 
 interface Props {
-  locale: "en" | "ja";
+  locale: Locale;
   messages: LandingMessages;
 }
 
 const { locale, messages } = Astro.props;
 const { team } = messages;
 
-const linkedinLabel = (name: string) =>
-  locale === "ja" ? `${name}のLinkedIn` : `${name} on LinkedIn`;
-const emailLabel = (name: string) =>
-  locale === "ja" ? `${name}にメール` : `Email ${name}`;
+const linkedinLabel = (name: string) => {
+  switch (locale) {
+    case "ja": return `${name}のLinkedIn`;
+    case "es": return `${name} en LinkedIn`;
+    case "it": return `${name} su LinkedIn`;
+    case "pt": return `${name} no LinkedIn`;
+    default: return `${name} on LinkedIn`;
+  }
+};
+const emailLabel = (name: string) => {
+  switch (locale) {
+    case "ja": return `${name}にメール`;
+    case "es": return `Enviar correo a ${name}`;
+    case "it": return `Scrivi a ${name}`;
+    case "pt": return `Enviar email a ${name}`;
+    default: return `Email ${name}`;
+  }
+};
 ---
 
 <BaseLayout locale={locale} messages={messages} page="team" seo={team.seo} schemaType="AboutPage">

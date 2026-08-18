@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import type { LandingMessages, StatementContent } from "../i18n/types";
+import type { LandingMessages, StatementContent, Locale } from "../i18n/types";
 
 interface Props {
-  locale: "en" | "ja";
+  locale: Locale;
   messages: LandingMessages;
   page: "mission" | "vision";
   content: StatementContent;
