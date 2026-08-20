@@ -83,7 +83,7 @@ export interface SponsorContent {
   title: string;
   body: string;
   cta: string;
-  lokalise: {
+  partners: {
     title: string;
     body: string;
   };

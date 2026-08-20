@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { LandingMessages, Locale } from "../i18n/types";
-import { studioDownloads } from "../config";
+import { studioDownloads, partners } from "../config";
 
 interface Props {
   locale: Locale;
@@ -37,6 +37,24 @@ const { locale, messages } = Astro.props;
 				</details>
 			</div>
 		</div>
+	</section>
+
+	<section class="partners-strip" aria-label={messages.sponsor.partners.title}>
+		<p class="partners-strip-label">{messages.sponsor.partners.title}</p>
+		<ul class="partners-strip-logos" role="list">
+			{partners.map((partner) => (
+				<li>
+					<a
+						href={partner.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={partner.name}
+					>
+						<img src={partner.logo} alt={partner.name} height="28" loading="lazy" />
+					</a>
+				</li>
+			))}
+		</ul>
 	</section>
 
 	<section class="showcase" aria-labelledby="showcase-title">

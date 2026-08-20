@@ -287,10 +287,10 @@ export const esMessages = {
     body:
       "Asakiri se construye de forma abierta y es posible gracias a las personas que creen en él. Todavía no hay ningún patrocinador aquí, así que este espacio está completamente libre. Apoya el proyecto en Patreon y serás el primer nombre de la lista.",
     cta: "Patrocina en Patreon",
-    lokalise: {
-      title: "Socio de localización",
+    partners: {
+      title: "Colaboradores",
       body:
-        "Asakiri fue aceptado en el programa de código abierto de Lokalise, que da al proyecto acceso gratuito a la plataforma de localización de Lokalise para gestionar las traducciones en todos los idiomas que admite.",
+        "Asakiri es de código abierto y cuenta con el apoyo de empresas que ofrecen sus herramientas gratuitamente a los proyectos de código abierto.",
     },
   },
   privacy: {
