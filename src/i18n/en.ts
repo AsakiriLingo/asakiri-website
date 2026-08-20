@@ -28,6 +28,7 @@ export const enMessages = {
     linux: "Linux",
   },
   aboutLink: "About",
+  howItWorksLink: "How it works",
   teamLink: "Team",
   fundingLink: "Funding",
   sponsorLink: "Sponsors",
@@ -38,53 +39,77 @@ export const enMessages = {
   termsLink: "Terms",
   legalLabel: "Legal",
   footer: "The open future of language learning.",
-  showcase: {
+  howItWorks: {
+    seo: {
+      title: "How it works | Asakiri Studio",
+      description:
+        "See how a course is built in Asakiri Studio: fill a content library with what you teach, add media, then write lessons and exercises that pull from it.",
+    },
     label: "Asakiri Studio",
-    title: "Everything you need to build a course.",
-    lede:
-      "Studio is the desktop app for teaching a language. Author lessons, reusable content, media, and interactive exercises, all on your own machine.",
-    items: [
+    title: "How a course comes together",
+    lede: "You build a course in Asakiri in a set order. Fill a library with the words and phrases you teach, add the audio and images, lay out the lessons, then write parts and exercises that draw from all of it. Each step feeds the next.",
+    stepsHeading: "The five steps",
+    steps: [
       {
-        title: "Structure the whole course",
-        body:
-          "Group lessons into units, then arrange each lesson's parts by dragging. The outline stays clear as the course grows.",
-        image: "/mocks/studio-course-structure.webp",
+        title: "Build the library first",
+        body: "Before writing a lesson, collect what the course teaches. Vocabulary, phrases, grammar notes, each in its own collection. A collection is a table you design, and every entry is a row with the fields you pick, like a word, its translation, and a sound clip.",
+        image: "/mocks/studio-content-library.webp",
         imageAlt:
-          "Asakiri Studio showing a Beginner Italian course outline with units and lessons.",
+          "The Asakiri Studio library listing Italian vocabulary entries with images and tags.",
       },
       {
-        title: "Write lessons with a live preview",
-        body:
-          "A focused editor for rich text and references, with a learner preview beside every part so you see exactly what students will.",
+        title: "Bring in the media",
+        body: "Record your own audio, pull photos from Unsplash and sentences from Tatoeba, or import files you already have. Every asset stays in your project folder, so the course works offline and travels with you.",
+        image: "/mocks/studio-media-library.webp",
+        imageAlt:
+          "The Asakiri Studio media library with photos and audio clips and an add media menu open.",
+      },
+      {
+        title: "Lay out the course",
+        body: "Group lessons into units and drag each lesson's parts into the order you want. The outline stays readable whether the course has ten lessons or two hundred.",
+        image: "/mocks/studio-course-structure.webp",
+        imageAlt:
+          "An Asakiri Studio course outline showing a Beginner Italian course with units and lessons.",
+      },
+      {
+        title: "Write the lessons",
+        body: "Each lesson is a stack of parts: rich text, media, or an exercise. You write against a live learner preview, and you drop in library entries instead of retyping a word you already have.",
         image: "/mocks/studio-lesson-editor.webp",
         imageAlt:
           "The Asakiri Studio lesson editor with a rich text part and a learner preview panel.",
       },
       {
-        title: "Build exercises that check themselves",
-        body:
-          "Multiple choice, listening, matching, word order, and more. Each exercise pulls from your content and previews as you edit.",
+        title: "Add exercises that grade themselves",
+        body: "Multiple choice, listening, matching, word order, and more. Each exercise reads from your library entries, so the answer key is the entry itself. Fix the entry and the exercise stays correct.",
         image: "/mocks/studio-exercise-editor.webp",
         imageAlt:
           "A multiple choice exercise being edited in Asakiri Studio with answer options and a preview.",
       },
+    ],
+    libraryHeading: "What the library is for",
+    libraryLede: "The library is the part people misread, so here it is plainly. It is the one place a course keeps what it teaches. Lessons and exercises point at it. They never hold their own copy.",
+    libraryPoints: [
       {
-        title: "Reuse content everywhere",
-        body:
-          "Keep vocabulary and phrases in collections, then pull the same entries into any lesson, media block, or exercise.",
-        image: "/mocks/studio-content-library.webp",
-        imageAlt:
-          "The Asakiri Studio content library listing Italian vocabulary with images and tags.",
+        title: "One source of truth",
+        body: "Every word, phrase, and note lives in the library once. A lesson that uses a word borrows it from there rather than storing its own version.",
       },
       {
-        title: "Bring in real media",
-        body:
-          "Search Unsplash photos and Tatoeba audio, record your own, or import files. Everything stays local to your project.",
-        image: "/mocks/studio-media-library.webp",
-        imageAlt:
-          "The Asakiri Studio media library with photos and audio clips and an add media menu open.",
+        title: "Fix it once, fixed everywhere",
+        body: "Correct a translation or swap an audio clip in the library, and every lesson and exercise using it updates. There is nothing to hunt down across the course.",
+      },
+      {
+        title: "It is not a spreadsheet",
+        body: "It shows as a table, but the rows are live. Each entry has a stable ID, so renaming a column or editing a value never breaks the lessons that reference it.",
+      },
+      {
+        title: "Exercises read from it",
+        body: "A quiz checks the learner against the real entry, not against text typed into the question. The library is the answer key, which keeps grading and content in sync.",
       },
     ],
+    ctaHeading: "Build one yourself",
+    ctaBody: "Studio is free and runs on your own machine. Download it and start with a library, or read how the pieces fit together in the docs.",
+    ctaDownload: "Download Studio",
+    ctaDocs: "Read the docs",
   },
   about: {
     seo: {

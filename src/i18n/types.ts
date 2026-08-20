@@ -170,18 +170,35 @@ export interface TeamContent {
   members: TeamMember[];
 }
 
-export interface ShowcaseItem {
+export interface HowItWorksStep {
   title: string;
   body: string;
   image: string;
   imageAlt: string;
 }
 
-export interface ShowcaseContent {
+export interface HowItWorksPoint {
+  title: string;
+  body: string;
+}
+
+export interface HowItWorksContent {
+  seo: {
+    title: string;
+    description: string;
+  };
   label: string;
   title: string;
   lede: string;
-  items: ShowcaseItem[];
+  stepsHeading: string;
+  steps: HowItWorksStep[];
+  libraryHeading: string;
+  libraryLede: string;
+  libraryPoints: HowItWorksPoint[];
+  ctaHeading: string;
+  ctaBody: string;
+  ctaDownload: string;
+  ctaDocs: string;
 }
 
 export interface LandingMessages {
@@ -212,6 +229,7 @@ export interface LandingMessages {
     linux: string;
   };
   aboutLink: string;
+  howItWorksLink: string;
   teamLink: string;
   sponsorLink: string;
   fundingLink: string;
@@ -222,7 +240,7 @@ export interface LandingMessages {
   termsLink: string;
   legalLabel: string;
   footer: string;
-  showcase: ShowcaseContent;
+  howItWorks: HowItWorksContent;
   about: AboutContent;
   mission: StatementContent;
   vision: StatementContent;

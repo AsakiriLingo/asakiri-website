@@ -1,0 +1,313 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { LandingMessages, Locale } from "../i18n/types";
+import { docsUrl } from "../config";
+
+interface Props {
+  locale: Locale;
+  messages: LandingMessages;
+}
+
+const { locale, messages } = Astro.props;
+const howItWorks = messages.howItWorks;
+const homeUrl = locale === "en" ? "/" : `/${locale}/`;
+---
+
+<BaseLayout
+	locale={locale}
+	messages={messages}
+	page="how-it-works"
+	seo={howItWorks.seo}
+	schemaType="WebPage"
+>
+	<article class="howto">
+		<header class="howto-head">
+			<p class="howto-label">{howItWorks.label}</p>
+			<h1>{howItWorks.title}</h1>
+			<p class="howto-lede">{howItWorks.lede}</p>
+		</header>
+
+		<section class="howto-section" aria-labelledby="howto-steps">
+			<h2 id="howto-steps">{howItWorks.stepsHeading}</h2>
+			<ol class="howto-steps" role="list">
+				{howItWorks.steps.map((step, index) => (
+					<li class="howto-step">
+						<figure class="howto-figure">
+							<img
+								class="howto-shot"
+								src={step.image}
+								alt={step.imageAlt}
+								width="1600"
+								height="878"
+								loading="lazy"
+								decoding="async"
+							/>
+						</figure>
+						<div class="howto-step-text">
+							<p class="howto-step-index" aria-hidden="true">{index + 1}</p>
+							<h3 class="howto-step-title">{step.title}</h3>
+							<p class="howto-step-body">{step.body}</p>
+						</div>
+					</li>
+				))}
+			</ol>
+		</section>
+
+		<section class="howto-library" aria-labelledby="howto-library">
+			<h2 id="howto-library">{howItWorks.libraryHeading}</h2>
+			<p class="howto-library-lede">{howItWorks.libraryLede}</p>
+			<ul class="howto-points" role="list">
+				{howItWorks.libraryPoints.map((point) => (
+					<li class="howto-point">
+						<h3 class="howto-point-title">{point.title}</h3>
+						<p class="howto-point-body">{point.body}</p>
+					</li>
+				))}
+			</ul>
+		</section>
+
+		<section class="howto-section howto-cta" aria-labelledby="howto-cta">
+			<h2 id="howto-cta">{howItWorks.ctaHeading}</h2>
+			<p class="howto-cta-body">{howItWorks.ctaBody}</p>
+			<div class="howto-actions">
+				<a class="howto-action" href={homeUrl}>{howItWorks.ctaDownload}</a>
+				<a
+					class="howto-action-link"
+					href={docsUrl}
+					target="_blank"
+					rel="noopener noreferrer">{howItWorks.ctaDocs} <span aria-hidden="true">↗</span></a
+				>
+			</div>
+		</section>
+	</article>
+</BaseLayout>
+
+<style>
+	.howto {
+		width: min(100%, var(--content-max));
+		margin-inline: auto;
+		padding-block: var(--space-2xl) var(--space-4xl);
+		padding-inline-start: max(var(--page-gutter), env(safe-area-inset-left));
+		padding-inline-end: max(var(--page-gutter), env(safe-area-inset-right));
+	}
+
+	.howto-head {
+		max-width: 64rem;
+	}
+
+	.howto-label {
+		margin: 0;
+		color: var(--color-brand);
+		font-size: var(--text-xs);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.howto-head h1 {
+		max-width: 20ch;
+		margin: var(--space-sm) 0 0;
+		font-family: var(--font-display);
+		font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+		font-weight: 400;
+		letter-spacing: -0.03em;
+		line-height: 1.05;
+		text-wrap: balance;
+	}
+
+	.howto-lede {
+		margin: var(--space-lg) 0 0;
+		max-width: var(--measure-body);
+		font-family: var(--font-display);
+		font-size: clamp(var(--text-md), 2.2vw, var(--text-lg));
+		font-weight: 400;
+		line-height: 1.45;
+		text-wrap: pretty;
+	}
+
+	.howto-section {
+		margin-block-start: var(--space-4xl);
+	}
+
+	.howto-section > h2,
+	.howto-library > h2 {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: clamp(1.6rem, 3vw, 2.25rem);
+		font-weight: 400;
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+		text-wrap: balance;
+	}
+
+	.howto-steps {
+		display: grid;
+		gap: clamp(var(--space-3xl), 9vw, var(--space-4xl));
+		margin: var(--space-2xl) 0 0;
+		padding: 0;
+		list-style: none;
+		counter-reset: howto;
+	}
+
+	.howto-step {
+		display: grid;
+		gap: var(--space-lg);
+		align-items: center;
+	}
+
+	.howto-figure {
+		margin: 0;
+		min-width: 0;
+	}
+
+	.howto-shot {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1600 / 878;
+		object-fit: cover;
+		object-position: top center;
+		border: var(--rule-thin) solid var(--color-rule);
+		border-radius: var(--radius-mark);
+	}
+
+	.howto-step-index {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.25rem;
+		height: 2.25rem;
+		margin: 0 0 var(--space-md);
+		border-radius: 999px;
+		background: var(--color-brand);
+		color: var(--color-brand-ink);
+		font-family: var(--font-display);
+		font-size: var(--text-md);
+		line-height: 1;
+	}
+
+	.howto-step-title {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+		font-weight: 500;
+		letter-spacing: -0.01em;
+		line-height: 1.2;
+		text-wrap: balance;
+	}
+
+	.howto-step-body {
+		margin: var(--space-sm) 0 0;
+		max-width: 46ch;
+		color: var(--color-ink-2);
+		font-size: var(--text-base);
+		line-height: 1.65;
+		text-wrap: pretty;
+	}
+
+	.howto-library {
+		margin-block-start: var(--space-4xl);
+		padding-block: var(--space-2xl);
+		border-block: var(--rule-thin) solid var(--color-rule);
+	}
+
+	.howto-library-lede {
+		margin: var(--space-lg) 0 0;
+		max-width: var(--measure-body);
+		font-family: var(--font-display);
+		font-size: clamp(var(--text-md), 2vw, var(--text-lg));
+		font-weight: 400;
+		line-height: 1.45;
+		text-wrap: pretty;
+	}
+
+	.howto-points {
+		display: grid;
+		gap: var(--space-xl);
+		margin: var(--space-2xl) 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.howto-point {
+		max-width: 52ch;
+	}
+
+	.howto-point-title {
+		margin: 0;
+		font-size: var(--text-md);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.25;
+	}
+
+	.howto-point-body {
+		margin: var(--space-xs) 0 0;
+		color: var(--color-ink-2);
+		font-size: var(--text-base);
+		line-height: 1.65;
+		text-wrap: pretty;
+	}
+
+	.howto-cta-body {
+		margin: var(--space-lg) 0 0;
+		max-width: var(--measure-body);
+		color: var(--color-ink-2);
+		font-size: var(--text-base);
+		line-height: 1.65;
+		text-wrap: pretty;
+	}
+
+	.howto-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-lg);
+		margin-block-start: var(--space-xl);
+	}
+
+	.howto-action {
+		display: inline-flex;
+		align-items: center;
+		min-height: var(--size-touch);
+		padding-inline: var(--space-xl);
+		border-radius: var(--radius-action);
+		background: var(--color-brand);
+		color: var(--color-brand-ink);
+		font-weight: 500;
+		text-decoration: none;
+		transition: background var(--dur-short) var(--ease-out);
+	}
+
+	.howto-action-link {
+		color: var(--color-ink);
+		font-weight: 500;
+		text-decoration: none;
+		text-underline-offset: 0.2em;
+	}
+
+	.howto-action-link:hover {
+		text-decoration: underline;
+	}
+
+	@media (hover: hover) and (pointer: fine) {
+		.howto-action:hover {
+			background: var(--color-brand-hover);
+		}
+	}
+
+	@media (min-width: 48rem) {
+		.howto-step {
+			grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+			gap: clamp(var(--space-xl), 5vw, var(--space-3xl));
+		}
+
+		.howto-step:nth-child(even) .howto-figure {
+			order: 2;
+		}
+
+		.howto-points {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: var(--space-2xl);
+		}
+	}
+</style>

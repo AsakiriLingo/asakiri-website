@@ -56,35 +56,6 @@ const { locale, messages } = Astro.props;
 			))}
 		</ul>
 	</section>
-
-	<section class="showcase" aria-labelledby="showcase-title">
-		<div class="showcase-intro">
-			<p class="showcase-label">{messages.showcase.label}</p>
-			<h2 id="showcase-title">{messages.showcase.title}</h2>
-			<p class="showcase-lede">{messages.showcase.lede}</p>
-		</div>
-		<ul class="showcase-list" role="list">
-			{messages.showcase.items.map((item) => (
-				<li class="showcase-item">
-					<figure class="showcase-figure">
-						<img
-							class="showcase-shot"
-							src={item.image}
-							alt={item.imageAlt}
-							width="1600"
-							height="878"
-							loading="lazy"
-							decoding="async"
-						/>
-					</figure>
-					<div class="showcase-text">
-						<h3 class="showcase-item-title">{item.title}</h3>
-						<p class="showcase-item-body">{item.body}</p>
-					</div>
-				</li>
-			))}
-		</ul>
-	</section>
 </BaseLayout>
 
 <script>

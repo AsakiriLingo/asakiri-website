@@ -6,7 +6,7 @@ import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl } from "../conf
 interface Props {
   locale: Locale;
   messages: LandingMessages;
-  page: "home" | "about" | "mission" | "vision" | "team" | "funding" | "sponsor" | "contact" | "brand" | "privacy" | "terms" | "404";
+  page: "home" | "about" | "how-it-works" | "mission" | "vision" | "team" | "funding" | "sponsor" | "contact" | "brand" | "privacy" | "terms" | "404";
   seo: { title: string; description: string };
   schemaType?: string;
   noindex?: boolean;
@@ -47,6 +47,7 @@ const LANGUAGE_MENU_LABEL: Record<Locale, string> = {
 const basePaths = {
   home: "/",
   about: "/about/",
+  "how-it-works": "/how-it-works/",
   mission: "/mission/",
   vision: "/vision/",
   team: "/team/",
@@ -66,6 +67,7 @@ const pageKey: PageKey = page in basePaths ? (page as PageKey) : "home";
 
 const homeUrl = localizedPath("home", locale);
 const aboutUrl = localizedPath("about", locale);
+const howItWorksUrl = localizedPath("how-it-works", locale);
 const missionUrl = localizedPath("mission", locale);
 const visionUrl = localizedPath("vision", locale);
 const teamUrl = localizedPath("team", locale);
@@ -170,6 +172,11 @@ const structuredData = JSON.stringify({
 					>{messages.aboutLink}</a>
 					<a
 						class="nav-link"
+						href={howItWorksUrl}
+						aria-current={page === "how-it-works" ? "page" : undefined}
+					>{messages.howItWorksLink}</a>
+					<a
+						class="nav-link"
 						href={missionUrl}
 						aria-current={page === "mission" ? "page" : undefined}
 					>{messages.mission.label}</a>
@@ -220,6 +227,7 @@ const structuredData = JSON.stringify({
 				</div>
 				<div class="footer-nav">
 					<nav class="footer-links" aria-label={messages.siteLinksLabel}>
+						<a href={howItWorksUrl} aria-current={page === "how-it-works" ? "page" : undefined}>{messages.howItWorksLink}</a>
 						<a href={teamUrl} aria-current={page === "team" ? "page" : undefined}>{messages.teamLink}</a>
 						<a href={fundingUrl} aria-current={page === "funding" ? "page" : undefined}>{messages.fundingLink}</a>
 						<a href={sponsorUrl} aria-current={page === "sponsor" ? "page" : undefined}>{messages.sponsorLink}</a>

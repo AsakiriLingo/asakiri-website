@@ -28,6 +28,7 @@ export const itMessages = {
     linux: "Linux",
   },
   aboutLink: "Il progetto",
+  howItWorksLink: "Come funziona",
   teamLink: "Team",
   fundingLink: "Finanziamento",
   sponsorLink: "Sponsor",
@@ -38,53 +39,77 @@ export const itMessages = {
   termsLink: "Termini",
   legalLabel: "Note legali",
   footer: "Il futuro aperto dell'apprendimento delle lingue.",
-  showcase: {
+  howItWorks: {
+    seo: {
+      title: "Come funziona | Asakiri Studio",
+      description:
+        "Scopri come si crea un corso in Asakiri Studio: riempi una libreria di contenuti con ciò che insegni, aggiungi i media e scrivi lezioni ed esercizi che vi attingono.",
+    },
     label: "Asakiri Studio",
-    title: "Tutto ciò che ti serve per creare un corso.",
-    lede:
-      "Studio è l'app desktop per insegnare una lingua. Crea lezioni, contenuti riutilizzabili, media ed esercizi interattivi, tutto sul tuo computer.",
-    items: [
+    title: "Come nasce un corso",
+    lede: "In Asakiri costruisci un corso in un ordine preciso. Riempi una libreria con le parole e le frasi che insegni, aggiungi l'audio e le immagini, imposta le lezioni e scrivi le parti e gli esercizi che attingono a tutto questo. Ogni passo alimenta il successivo.",
+    stepsHeading: "I cinque passi",
+    steps: [
       {
-        title: "Struttura l'intero corso",
-        body:
-          "Raggruppa le lezioni in unità, poi disponi le parti di ogni lezione trascinandole. La struttura resta chiara man mano che il corso cresce.",
-        image: "/mocks/studio-course-structure.webp",
-        imageAlt:
-          "Asakiri Studio che mostra la struttura di un corso di italiano per principianti con unità e lezioni.",
-      },
-      {
-        title: "Scrivi le lezioni con un'anteprima dal vivo",
-        body:
-          "Un editor essenziale per testo formattato e riferimenti, con un'anteprima per chi impara accanto a ogni parte, così vedi esattamente ciò che vedranno gli studenti.",
-        image: "/mocks/studio-lesson-editor.webp",
-        imageAlt:
-          "L'editor delle lezioni di Asakiri Studio con una parte di testo formattato e un pannello di anteprima per chi impara.",
-      },
-      {
-        title: "Crea esercizi che si correggono da soli",
-        body:
-          "Scelta multipla, ascolto, abbinamento, ordine delle parole e altro ancora. Ogni esercizio attinge ai tuoi contenuti e si mostra in anteprima mentre lo modifichi.",
-        image: "/mocks/studio-exercise-editor.webp",
-        imageAlt:
-          "Un esercizio a scelta multipla in fase di modifica in Asakiri Studio, con opzioni di risposta e un'anteprima.",
-      },
-      {
-        title: "Riutilizza i contenuti ovunque",
-        body:
-          "Tieni vocaboli e frasi in raccolte, poi richiama le stesse voci in qualsiasi lezione, blocco multimediale o esercizio.",
+        title: "Prima costruisci la libreria",
+        body: "Prima di scrivere una lezione, raccogli ciò che il corso insegna. Vocaboli, frasi, note di grammatica, ognuno nella propria collezione. Una collezione è una tabella che progetti tu, e ogni voce è una riga con i campi che scegli, come una parola, la sua traduzione e una clip audio.",
         image: "/mocks/studio-content-library.webp",
         imageAlt:
-          "La libreria dei contenuti di Asakiri Studio che elenca vocaboli italiani con immagini e tag.",
+          "La libreria di Asakiri Studio con voci di vocabolario italiano, immagini ed etichette.",
       },
       {
-        title: "Aggiungi media reali",
-        body:
-          "Cerca foto su Unsplash e audio su Tatoeba, registra i tuoi, oppure importa file. Tutto resta in locale nel tuo progetto.",
+        title: "Porta dentro i media",
+        body: "Registra il tuo audio, prendi foto da Unsplash e frasi da Tatoeba, oppure importa file che hai già. Ogni risorsa resta nella cartella del progetto, così il corso funziona offline e viaggia con te.",
         image: "/mocks/studio-media-library.webp",
         imageAlt:
           "La libreria multimediale di Asakiri Studio con foto e clip audio e un menu per aggiungere media aperto.",
       },
+      {
+        title: "Imposta il corso",
+        body: "Raggruppa le lezioni in unità e trascina le parti di ogni lezione nell'ordine che vuoi. La struttura resta leggibile che il corso abbia dieci lezioni o duecento.",
+        image: "/mocks/studio-course-structure.webp",
+        imageAlt:
+          "Una struttura di corso in Asakiri Studio che mostra un corso di italiano per principianti con unità e lezioni.",
+      },
+      {
+        title: "Scrivi le lezioni",
+        body: "Ogni lezione è una pila di parti: testo formattato, media o un esercizio. Scrivi accanto a un'anteprima dello studente in tempo reale e inserisci le voci della libreria invece di ridigitare una parola che hai già.",
+        image: "/mocks/studio-lesson-editor.webp",
+        imageAlt:
+          "L'editor delle lezioni di Asakiri Studio con una parte di testo formattato e un pannello di anteprima dello studente.",
+      },
+      {
+        title: "Aggiungi esercizi che si correggono da soli",
+        body: "Scelta multipla, ascolto, abbinamento, ordine delle parole e altro. Ogni esercizio legge dalle voci della tua libreria, così la chiave di correzione è la voce stessa. Correggi la voce e l'esercizio resta giusto.",
+        image: "/mocks/studio-exercise-editor.webp",
+        imageAlt:
+          "Un esercizio a scelta multipla in fase di modifica in Asakiri Studio con opzioni di risposta e un'anteprima.",
+      },
     ],
+    libraryHeading: "A cosa serve la libreria",
+    libraryLede: "La libreria è la parte che si fraintende, quindi eccola chiara. È l'unico posto in cui un corso conserva ciò che insegna. Le lezioni e gli esercizi puntano a essa. Non ne tengono mai una copia propria.",
+    libraryPoints: [
+      {
+        title: "Un'unica fonte di verità",
+        body: "Ogni parola, frase e nota vive nella libreria una sola volta. Una lezione che usa una parola la prende da lì invece di conservarne una propria versione.",
+      },
+      {
+        title: "Correggi una volta, corretto ovunque",
+        body: "Correggi una traduzione o sostituisci una clip audio nella libreria, e ogni lezione ed esercizio che la usa si aggiorna. Non c'è nulla da rincorrere per tutto il corso.",
+      },
+      {
+        title: "Non è un foglio di calcolo",
+        body: "Si presenta come una tabella, ma le righe sono vive. Ogni voce ha un ID stabile, così rinominare una colonna o modificare un valore non rompe mai le lezioni che la referenziano.",
+      },
+      {
+        title: "Gli esercizi leggono da essa",
+        body: "Un quiz corregge lo studente rispetto alla voce reale, non rispetto a un testo digitato nella domanda. La libreria è la chiave di correzione, e questo tiene allineati correzione e contenuto.",
+      },
+    ],
+    ctaHeading: "Creane uno tu",
+    ctaBody: "Studio è gratuito e gira sulla tua macchina. Scaricalo e parti dalla libreria, oppure leggi come si incastrano i pezzi nella documentazione.",
+    ctaDownload: "Scarica Studio",
+    ctaDocs: "Leggi la documentazione",
   },
   about: {
     seo: {
