@@ -83,6 +83,10 @@ export interface SponsorContent {
   title: string;
   body: string;
   cta: string;
+  lokalise: {
+    title: string;
+    body: string;
+  };
 }
 
 export interface BrandPrinciple {

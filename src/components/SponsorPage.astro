@@ -1,7 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import type { LandingMessages, Locale } from "../i18n/types";
-import { patreonJoinUrl } from "../config";
 
 interface Props {
   locale: Locale;
@@ -15,13 +14,30 @@ const { sponsor } = messages;
 <BaseLayout locale={locale} messages={messages} page="sponsor" seo={sponsor.seo} schemaType="WebPage">
 	<article class="sponsor">
 		<p class="sponsor-label">{sponsor.label}</p>
-		<h1 class="sponsor-title">{sponsor.title}</h1>
-		<p class="sponsor-body">{sponsor.body}</p>
+		<h1 class="sponsor-title">{sponsor.lokalise.title}</h1>
+		<p class="sponsor-body">{sponsor.lokalise.body}</p>
 		<a
-			class="sponsor-cta"
-			href={patreonJoinUrl}
+			class="sponsor-lokalise-logo"
+			href="https://lokalise.com/"
 			target="_blank"
 			rel="noopener noreferrer"
-		>{sponsor.cta} <span aria-hidden="true">↗</span></a>
+			aria-label="Lokalise"
+		>
+			<img src="/lokalise-logo.svg" alt="Lokalise" width="150" height="32" loading="lazy" />
+		</a>
 	</article>
 </BaseLayout>
+
+<style>
+	.sponsor-lokalise-logo {
+		display: block;
+		width: fit-content;
+		margin-block-start: var(--space-xl);
+	}
+
+	.sponsor-lokalise-logo img {
+		display: block;
+		width: auto;
+		height: 2rem;
+	}
+</style>
