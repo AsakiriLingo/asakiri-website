@@ -13,15 +13,18 @@ const brand = messages.brandKit;
 // Values mirror tokens.css (OKLCH is the source of truth; hex for convenience).
 const colors = [
   { name: "Brand", token: "--color-brand", oklch: "oklch(0.44 0.115 155)", hex: "#006435", onDark: false },
-  { name: "Brand hover", token: "--color-brand-hover", oklch: "oklch(0.37 0.105 155)", hex: "#004F25", onDark: false },
+  { name: "Brand hover", token: "--color-brand-hover", oklch: "oklch(0.38 0.115 155)", hex: "#005325", onDark: false },
   { name: "Brand ink", token: "--color-brand-ink", oklch: "oklch(0.98 0.008 155)", hex: "#F4FAF6", onDark: true },
+  { name: "Accent", token: "--color-accent", oklch: "oklch(0.82 0.15 94)", hex: "#E4C23B", onDark: false },
+  { name: "Accent subtle", token: "--color-accent-subtle", oklch: "oklch(0.94 0.075 96)", hex: "#FAECB2", onDark: true },
+  { name: "Accent text", token: "--color-accent-text", oklch: "oklch(0.37 0.09 82)", hex: "#573900", onDark: false },
   { name: "Ink", token: "--color-ink", oklch: "oklch(0.22 0.018 155)", hex: "#141D17", onDark: false },
   { name: "Ink 2", token: "--color-ink-2", oklch: "oklch(0.42 0.02 155)", hex: "#455048", onDark: false },
   { name: "Muted", token: "--color-muted", oklch: "oklch(0.44 0.018 155)", hex: "#4B564E", onDark: false },
-  { name: "Paper", token: "--color-paper", oklch: "oklch(0.97 0.012 145)", hex: "#F0F7F0", onDark: true },
-  { name: "Paper 2", token: "--color-paper-2", oklch: "oklch(0.94 0.014 145)", hex: "#E6EEE6", onDark: true },
-  { name: "Rule", token: "--color-rule", oklch: "oklch(0.86 0.014 150)", hex: "#CBD4CC", onDark: true },
-  { name: "Focus", token: "--color-focus", oklch: "oklch(0.58 0.18 155)", hex: "#009746", onDark: false },
+  { name: "Paper", token: "--color-paper", oklch: "oklch(0.985 0.006 105)", hex: "#FAFAF6", onDark: true },
+  { name: "Paper 2", token: "--color-paper-2", oklch: "oklch(0.96 0.01 105)", hex: "#F3F2EB", onDark: true },
+  { name: "Rule", token: "--color-rule", oklch: "oklch(0.915 0.006 105)", hex: "#E3E3DF", onDark: true },
+  { name: "Focus", token: "--color-focus", oklch: "oklch(0.34 0.12 155)", hex: "#004818", onDark: false },
 ];
 
 const fonts = [
@@ -48,7 +51,7 @@ const fonts = [
 						<img src="/app-icon-72.png" srcset="/app-icon-72.png 1x, /app-icon.png 2x" alt="" width="72" height="72" />
 					</div>
 					<div class="brand-logo-lockup">
-						<img src="/app-icon-36.png" srcset="/app-icon-36.png 1x, /app-icon-72.png 2x" alt="" width="36" height="36" />
+						<img src="/asakiri-mark.svg" alt="" width="36" height="36" />
 						<span>{messages.brand}</span>
 					</div>
 				</div>

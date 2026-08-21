@@ -1,14 +1,20 @@
 :root {
-	--color-paper: oklch(0.97 0.012 145);
-	--color-paper-2: oklch(0.94 0.014 145);
+	--color-paper: oklch(0.985 0.006 105);
+	--color-paper-2: oklch(0.96 0.01 105);
 	--color-ink: oklch(0.22 0.018 155);
 	--color-ink-2: oklch(0.42 0.02 155);
 	--color-muted: oklch(0.44 0.018 155);
-	--color-rule: oklch(0.86 0.014 150);
+	--color-rule: oklch(0.915 0.006 105);
 	--color-brand: oklch(0.44 0.115 155);
-	--color-brand-hover: oklch(0.37 0.105 155);
+	--color-brand-hover: oklch(0.38 0.115 155);
 	--color-brand-ink: oklch(0.98 0.008 155);
-	--color-focus: oklch(0.58 0.18 155);
+	--color-brand-edge: oklch(0.32 0.095 155);
+	--color-accent: oklch(0.82 0.15 94);
+	--color-accent-subtle: oklch(0.94 0.075 96);
+	--color-accent-text: oklch(0.37 0.09 82);
+	--color-accent-ink: oklch(0.24 0.045 88);
+	--color-accent-edge: oklch(0.67 0.14 92);
+	--color-focus: oklch(0.34 0.12 155);
 
 	--font-display: "Newsreader Variable", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
 	--font-body: "IBM Plex Sans Variable", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;

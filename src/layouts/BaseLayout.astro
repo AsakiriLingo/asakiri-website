@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ChevronDown from "../components/ChevronDown.astro";
 import type { LandingMessages, Locale } from "../i18n/types";
 import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl, partners } from "../config";
 
@@ -152,8 +153,7 @@ const structuredData = JSON.stringify({
 				<a class="brand" href={homeUrl} aria-label={messages.brand}>
 					<img
 						class="brand-mark"
-						src="/app-icon-36.png"
-						srcset="/app-icon-36.png 1x, /app-icon-72.png 2x"
+						src="/asakiri-mark.svg"
 						alt=""
 						width="36"
 						height="36"
@@ -194,7 +194,7 @@ const structuredData = JSON.stringify({
 					<details class="language">
 						<summary class="language-button" aria-label={LANGUAGE_MENU_LABEL[locale]}>
 							<span>{LOCALE_NAMES[locale]}</span>
-							<span class="language-caret" aria-hidden="true">▾</span>
+							<ChevronDown class="language-caret" size={14} />
 						</summary>
 						<ul class="language-menu">
 							{LOCALES.map((loc) => (

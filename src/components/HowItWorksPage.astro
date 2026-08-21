@@ -270,12 +270,19 @@ const homeUrl = locale === "en" ? "/" : `/${locale}/`;
 		align-items: center;
 		min-height: var(--size-touch);
 		padding-inline: var(--space-xl);
+		border: 2px solid var(--color-brand-edge);
+		border-bottom-width: 4px;
 		border-radius: var(--radius-action);
 		background: var(--color-brand);
 		color: var(--color-brand-ink);
 		font-weight: 500;
 		text-decoration: none;
-		transition: background var(--dur-short) var(--ease-out);
+		transition: background var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+	}
+
+	.howto-action:active {
+		border-bottom-width: 2px;
+		transform: translateY(var(--space-3xs));
 	}
 
 	.howto-action-link {

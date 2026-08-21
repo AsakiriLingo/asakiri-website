@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ChevronDown from "./ChevronDown.astro";
 import type { LandingMessages, Locale } from "../i18n/types";
 import { studioDownloads } from "../config";
 
@@ -22,7 +23,7 @@ const { locale, messages } = Astro.props;
 				<details class="download">
 					<summary class="download-button" aria-label={messages.download.ariaLabel}>
 						<span>{messages.download.label}</span>
-						<span class="download-caret" aria-hidden="true">▾</span>
+						<ChevronDown class="download-caret" size={16} />
 					</summary>
 					<ul class="download-menu" aria-label={messages.download.menuLabel}>
 						{studioDownloads.map((item) => (

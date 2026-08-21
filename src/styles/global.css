@@ -1,5 +1,5 @@
 /* Hallmark · genre: editorial · macrostructure: Split Studio · H2 knobs: ratio=7/5, proof=working-note, divider=negative-space
- * theme: custom · vibe: "calm asymmetric typographic local-first" · paper: oklch(0.97 0.012 145) · accent: oklch(0.44 0.115 155)
+ * theme: custom · vibe: "calm asymmetric typographic local-first" · paper: oklch(0.985 0.006 105) · brand: oklch(0.44 0.115 155) · accent: oklch(0.82 0.15 94)
  * display: Newsreader · body: IBM Plex Sans · axes: light / roman-serif / chromatic-green ~155deg
  * pre-emit: P5 H5 E5 S4 R5 V5 · contrast: pass (40-41) · slop: pass (42-49) · mobile: pass (34, 49-57)
  * enrichment: none · nav: N9 · footer: Ft1 · studied: no · context: explicit · v1.1.0
@@ -53,7 +53,7 @@ a:focus-visible {
 	align-items: center;
 	justify-content: space-between;
 	gap: var(--space-xs) var(--space-md);
-	width: min(100%, var(--content-max));
+	width: 100%;
 	min-height: calc(var(--space-3xl) + var(--space-md));
 	margin-inline: auto;
 	padding-block: var(--space-sm);
@@ -81,7 +81,6 @@ a:focus-visible {
 	display: block;
 	width: var(--size-mark);
 	height: var(--size-mark);
-	border-radius: var(--radius-mark);
 }
 
 .site-nav {
@@ -125,7 +124,7 @@ a:focus-visible {
 }
 
 .language-caret {
-	font-size: var(--text-xs);
+	display: block;
 	transition: transform var(--dur-short) var(--ease-out);
 }
 
@@ -328,7 +327,8 @@ h1 {
 	gap: var(--space-xs);
 	min-height: var(--size-touch);
 	padding-inline: var(--space-lg);
-	border: var(--rule-thin) solid var(--color-brand);
+	border: 2px solid var(--color-brand-edge);
+	border-bottom-width: 4px;
 	border-radius: var(--radius-action);
 	color: var(--color-brand-ink);
 	background: var(--color-brand);
@@ -338,7 +338,7 @@ h1 {
 	white-space: nowrap;
 	cursor: pointer;
 	list-style: none;
-	transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
+	transition: background-color var(--dur-short) var(--ease-out), transform var(--dur-micro) var(--ease-out);
 }
 
 .download-button::-webkit-details-marker {
@@ -347,10 +347,10 @@ h1 {
 
 .download-button:hover {
 	background: var(--color-brand-hover);
-	border-color: var(--color-brand-hover);
 }
 
 .download-button:active {
+	border-bottom-width: 2px;
 	transform: translateY(var(--space-3xs));
 }
 
@@ -360,6 +360,7 @@ h1 {
 }
 
 .download-caret {
+	display: block;
 	transition: transform var(--dur-short) var(--ease-out);
 }
 
@@ -856,7 +857,8 @@ h1 {
 	min-height: var(--size-touch);
 	margin-block-start: var(--space-xl);
 	padding-inline: var(--space-lg);
-	border: var(--rule-thin) solid var(--color-brand);
+	border: 2px solid var(--color-brand-edge);
+	border-bottom-width: 4px;
 	border-radius: var(--radius-action);
 	color: var(--color-brand-ink);
 	background: var(--color-brand);
@@ -873,12 +875,12 @@ h1 {
 .funding-cta:hover {
 	color: var(--color-brand-ink);
 	background: var(--color-brand-hover);
-	border-color: var(--color-brand-hover);
 }
 
 .sponsor-cta:active,
 .notfound-home:active,
 .funding-cta:active {
+	border-bottom-width: 2px;
 	transform: translateY(var(--space-3xs));
 }
 
@@ -1131,7 +1133,7 @@ h1 {
 	display: inline-flex;
 	align-items: center;
 	min-height: var(--size-touch);
-	color: var(--color-brand);
+	color: var(--color-muted);
 	font-size: var(--text-sm);
 	font-weight: 550;
 	text-decoration-color: transparent;
@@ -1143,7 +1145,7 @@ h1 {
 
 .footer-links a:hover,
 .footer-links a[aria-current="page"] {
-	color: var(--color-brand-hover);
+	color: var(--color-brand);
 	text-decoration-color: currentColor;
 }
 
