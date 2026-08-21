@@ -12,6 +12,8 @@ export const enMessages = {
   navigationLabel: "Primary navigation",
   communityLabel: "Community links",
   siteLinksLabel: "More pages",
+  footerExploreTitle: "Explore",
+  footerCommunityTitle: "Community",
   brand: "Asakiri",
   title: "Language learning, made to stay yours.",
   description:

@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import type { LandingMessages, Locale } from "../i18n/types";
-import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl } from "../config";
+import { githubUrl, docsUrl, discordUrl, patreonUrl, linkedinUrl, partners } from "../config";
 
 interface Props {
   locale: Locale;
@@ -224,30 +224,56 @@ const structuredData = JSON.stringify({
 						) : messages.brand}
 					</p>
 					<p class="footer-tagline">{messages.footer}</p>
+					<div class="footer-partners">
+						<p class="footer-partners-label">{messages.sponsor.partners.title}</p>
+						<ul class="footer-partners-logos" role="list">
+							{partners.map((partner) => (
+								<li>
+									<a
+										href={partner.url}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label={partner.name}
+									>
+										<img src={partner.logo} alt={partner.name} height="24" loading="lazy" />
+									</a>
+								</li>
+							))}
+						</ul>
+					</div>
 				</div>
-				<div class="footer-nav">
-					<nav class="footer-links" aria-label={messages.siteLinksLabel}>
-						<a href={howItWorksUrl} aria-current={page === "how-it-works" ? "page" : undefined}>{messages.howItWorksLink}</a>
-						<a href={teamUrl} aria-current={page === "team" ? "page" : undefined}>{messages.teamLink}</a>
-						<a href={fundingUrl} aria-current={page === "funding" ? "page" : undefined}>{messages.fundingLink}</a>
-						<a href={sponsorUrl} aria-current={page === "sponsor" ? "page" : undefined}>{messages.sponsorLink}</a>
-						<a href={contactUrl} aria-current={page === "contact" ? "page" : undefined}>{messages.contactLink}</a>
-						<a href={brandUrl} aria-current={page === "brand" ? "page" : undefined}>{messages.brandLink}</a>
+				<div class="footer-columns">
+					<nav class="footer-col" aria-labelledby="footer-explore-title">
+						<h2 class="footer-col-title" id="footer-explore-title">{messages.footerExploreTitle}</h2>
+						<ul class="footer-links" role="list">
+							<li><a href={howItWorksUrl} aria-current={page === "how-it-works" ? "page" : undefined}>{messages.howItWorksLink}</a></li>
+							<li><a href={teamUrl} aria-current={page === "team" ? "page" : undefined}>{messages.teamLink}</a></li>
+							<li><a href={fundingUrl} aria-current={page === "funding" ? "page" : undefined}>{messages.fundingLink}</a></li>
+							<li><a href={sponsorUrl} aria-current={page === "sponsor" ? "page" : undefined}>{messages.sponsorLink}</a></li>
+							<li><a href={contactUrl} aria-current={page === "contact" ? "page" : undefined}>{messages.contactLink}</a></li>
+							<li><a href={brandUrl} aria-current={page === "brand" ? "page" : undefined}>{messages.brandLink}</a></li>
+						</ul>
 					</nav>
-					<nav class="footer-links" aria-label={messages.communityLabel}>
-						<a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a>
-						<a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a>
-						<a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-						<a href={docsUrl} target="_blank" rel="noopener noreferrer">{messages.docsLink} <span aria-hidden="true">↗</span></a>
-						<a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+					<nav class="footer-col" aria-labelledby="footer-community-title">
+						<h2 class="footer-col-title" id="footer-community-title">{messages.footerCommunityTitle}</h2>
+						<ul class="footer-links" role="list">
+							<li><a href={discordUrl} target="_blank" rel="noopener noreferrer">Discord <span aria-hidden="true">↗</span></a></li>
+							<li><a href={patreonUrl} target="_blank" rel="noopener noreferrer">Patreon <span aria-hidden="true">↗</span></a></li>
+							<li><a href={githubUrl} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+							<li><a href={docsUrl} target="_blank" rel="noopener noreferrer">{messages.docsLink} <span aria-hidden="true">↗</span></a></li>
+							<li><a href={linkedinUrl} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></li>
+						</ul>
+					</nav>
+					<nav class="footer-col" aria-labelledby="footer-legal-title">
+						<h2 class="footer-col-title" id="footer-legal-title">{messages.legalLabel}</h2>
+						<ul class="footer-links footer-links--single" role="list">
+							<li><a href={privacyUrl} aria-current={page === "privacy" ? "page" : undefined}>{messages.privacyLink}</a></li>
+							<li><a href={termsUrl} aria-current={page === "terms" ? "page" : undefined}>{messages.termsLink}</a></li>
+						</ul>
 					</nav>
 				</div>
 				<div class="footer-baseline">
 					<p class="footer-copyright">© {new Date().getFullYear()} {messages.brand}</p>
-					<nav class="footer-links footer-legal" aria-label={messages.legalLabel}>
-						<a href={privacyUrl} aria-current={page === "privacy" ? "page" : undefined}>{messages.privacyLink}</a>
-						<a href={termsUrl} aria-current={page === "terms" ? "page" : undefined}>{messages.termsLink}</a>
-					</nav>
 				</div>
 			</footer>
 		</div>

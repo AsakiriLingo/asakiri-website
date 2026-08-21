@@ -12,6 +12,8 @@ export const ptMessages = {
   navigationLabel: "Navegação principal",
   communityLabel: "Ligações da comunidade",
   siteLinksLabel: "Mais páginas",
+  footerExploreTitle: "Explorar",
+  footerCommunityTitle: "Comunidade",
   brand: "Asakiri",
   title: "A aprendizagem de línguas, feita para continuar a ser sua.",
   description:

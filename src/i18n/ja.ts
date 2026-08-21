@@ -12,6 +12,8 @@ export const jaMessages = {
   navigationLabel: "メインナビゲーション",
   communityLabel: "コミュニティリンク",
   siteLinksLabel: "その他のページ",
+  footerExploreTitle: "ページ",
+  footerCommunityTitle: "コミュニティ",
   brand: "アサキリ",
   brandRubyBase: "朝霧",
   brandRubyText: "あさきり",

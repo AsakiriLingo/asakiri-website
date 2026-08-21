@@ -212,6 +212,8 @@ export interface LandingMessages {
   navigationLabel: string;
   communityLabel: string;
   siteLinksLabel: string;
+  footerExploreTitle: string;
+  footerCommunityTitle: string;
   brand: string;
   brandRubyBase?: string;
   brandRubyText?: string;
