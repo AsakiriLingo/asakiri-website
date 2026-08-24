@@ -50,7 +50,7 @@ export const esMessages = {
     label: "Asakiri Studio",
     title: "Cómo se arma un curso",
     lede: "En Asakiri construyes un curso en un orden definido. Llena una biblioteca con las palabras y frases que enseñas, añade el audio y las imágenes, organiza las lecciones y escribe las partes y los ejercicios que se nutren de todo ello. Cada paso alimenta al siguiente.",
-    stepsHeading: "Los cinco pasos",
+    stepsHeading: "Los cuatro pasos",
     steps: [
       {
         title: "Primero, crea la biblioteca",
@@ -67,25 +67,18 @@ export const esMessages = {
           "La biblioteca de medios de Asakiri Studio con fotos y clips de audio y un menú para añadir medios abierto.",
       },
       {
-        title: "Organiza el curso",
-        body: "Agrupa las lecciones en unidades y arrastra las partes de cada lección al orden que quieras. El esquema se mantiene legible tanto si el curso tiene diez lecciones como doscientas.",
-        image: "/mocks/studio-course-structure.webp",
-        imageAlt:
-          "Un esquema de curso en Asakiri Studio que muestra un curso de italiano para principiantes con unidades y lecciones.",
-      },
-      {
-        title: "Escribe las lecciones",
-        body: "Cada lección es una pila de partes: texto enriquecido, medios o un ejercicio. Escribes junto a una vista previa del alumno en vivo, y añades entradas de la biblioteca en lugar de volver a teclear una palabra que ya tienes.",
+        title: "Organiza y escribe las lecciones",
+        body: "Agrupa las lecciones en unidades y ordena las partes de cada lección en el esquema, luego escribe cada parte junto a una vista previa del alumno en vivo. Las partes son texto enriquecido, medios o ejercicios, y añades entradas de la biblioteca en lugar de volver a teclear una palabra que ya tienes.",
         image: "/mocks/studio-lesson-editor.webp",
         imageAlt:
-          "El editor de lecciones de Asakiri Studio con una parte de texto enriquecido y un panel de vista previa del alumno.",
+          "El editor de lecciones de Asakiri Studio: un esquema del curso con unidades y lecciones a la izquierda, una parte de texto enriquecido en el centro y una vista previa del alumno en vivo a la derecha.",
       },
       {
         title: "Añade ejercicios que se corrigen solos",
         body: "Opción múltiple, comprensión auditiva, emparejar, ordenar palabras y más. Cada ejercicio lee de las entradas de tu biblioteca, así que la clave de respuestas es la propia entrada. Corrige la entrada y el ejercicio sigue siendo correcto.",
         image: "/mocks/studio-exercise-editor.webp",
         imageAlt:
-          "Un ejercicio de opción múltiple editándose en Asakiri Studio con opciones de respuesta y una vista previa.",
+          "Un ejercicio de emparejar editándose en Asakiri Studio, con entradas de italiano e inglés emparejadas y una vista previa en vivo.",
       },
     ],
     libraryHeading: "Para qué sirve la biblioteca",

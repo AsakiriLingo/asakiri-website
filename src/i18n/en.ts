@@ -50,7 +50,7 @@ export const enMessages = {
     label: "Asakiri Studio",
     title: "How a course comes together",
     lede: "You build a course in Asakiri in a set order. Fill a library with the words and phrases you teach, add the audio and images, lay out the lessons, then write parts and exercises that draw from all of it. Each step feeds the next.",
-    stepsHeading: "The five steps",
+    stepsHeading: "The four steps",
     steps: [
       {
         title: "Build the library first",
@@ -67,25 +67,18 @@ export const enMessages = {
           "The Asakiri Studio media library with photos and audio clips and an add media menu open.",
       },
       {
-        title: "Lay out the course",
-        body: "Group lessons into units and drag each lesson's parts into the order you want. The outline stays readable whether the course has ten lessons or two hundred.",
-        image: "/mocks/studio-course-structure.webp",
-        imageAlt:
-          "An Asakiri Studio course outline showing a Beginner Italian course with units and lessons.",
-      },
-      {
-        title: "Write the lessons",
-        body: "Each lesson is a stack of parts: rich text, media, or an exercise. You write against a live learner preview, and you drop in library entries instead of retyping a word you already have.",
+        title: "Lay out and write the lessons",
+        body: "Group lessons into units and arrange each lesson's parts in the outline, then write every part against a live learner preview. Parts are rich text, media, or exercises, and you drop in library entries instead of retyping a word you already have.",
         image: "/mocks/studio-lesson-editor.webp",
         imageAlt:
-          "The Asakiri Studio lesson editor with a rich text part and a learner preview panel.",
+          "The Asakiri Studio lesson editor: a course outline of units and lessons on the left, a rich text part in the center, and a live learner preview on the right.",
       },
       {
         title: "Add exercises that grade themselves",
         body: "Multiple choice, listening, matching, word order, and more. Each exercise reads from your library entries, so the answer key is the entry itself. Fix the entry and the exercise stays correct.",
         image: "/mocks/studio-exercise-editor.webp",
         imageAlt:
-          "A multiple choice exercise being edited in Asakiri Studio with answer options and a preview.",
+          "A match-pairs exercise being edited in Asakiri Studio, with paired Italian and English entries and a live preview.",
       },
     ],
     libraryHeading: "What the library is for",

@@ -50,7 +50,7 @@ export const itMessages = {
     label: "Asakiri Studio",
     title: "Come nasce un corso",
     lede: "In Asakiri costruisci un corso in un ordine preciso. Riempi una libreria con le parole e le frasi che insegni, aggiungi l'audio e le immagini, imposta le lezioni e scrivi le parti e gli esercizi che attingono a tutto questo. Ogni passo alimenta il successivo.",
-    stepsHeading: "I cinque passi",
+    stepsHeading: "I quattro passi",
     steps: [
       {
         title: "Prima costruisci la libreria",
@@ -67,25 +67,18 @@ export const itMessages = {
           "La libreria multimediale di Asakiri Studio con foto e clip audio e un menu per aggiungere media aperto.",
       },
       {
-        title: "Imposta il corso",
-        body: "Raggruppa le lezioni in unità e trascina le parti di ogni lezione nell'ordine che vuoi. La struttura resta leggibile che il corso abbia dieci lezioni o duecento.",
-        image: "/mocks/studio-course-structure.webp",
-        imageAlt:
-          "Una struttura di corso in Asakiri Studio che mostra un corso di italiano per principianti con unità e lezioni.",
-      },
-      {
-        title: "Scrivi le lezioni",
-        body: "Ogni lezione è una pila di parti: testo formattato, media o un esercizio. Scrivi accanto a un'anteprima dello studente in tempo reale e inserisci le voci della libreria invece di ridigitare una parola che hai già.",
+        title: "Imposta e scrivi le lezioni",
+        body: "Raggruppa le lezioni in unità e disponi le parti di ogni lezione nella struttura, poi scrivi ogni parte accanto a un'anteprima dello studente in tempo reale. Le parti sono testo formattato, media o esercizi, e inserisci le voci della libreria invece di ridigitare una parola che hai già.",
         image: "/mocks/studio-lesson-editor.webp",
         imageAlt:
-          "L'editor delle lezioni di Asakiri Studio con una parte di testo formattato e un pannello di anteprima dello studente.",
+          "L'editor delle lezioni di Asakiri Studio: la struttura del corso con unità e lezioni a sinistra, una parte di testo formattato al centro e un'anteprima dello studente in tempo reale a destra.",
       },
       {
         title: "Aggiungi esercizi che si correggono da soli",
         body: "Scelta multipla, ascolto, abbinamento, ordine delle parole e altro. Ogni esercizio legge dalle voci della tua libreria, così la chiave di correzione è la voce stessa. Correggi la voce e l'esercizio resta giusto.",
         image: "/mocks/studio-exercise-editor.webp",
         imageAlt:
-          "Un esercizio a scelta multipla in fase di modifica in Asakiri Studio con opzioni di risposta e un'anteprima.",
+          "Un esercizio di abbinamento in fase di modifica in Asakiri Studio, con voci italiane e inglesi abbinate e un'anteprima in tempo reale.",
       },
     ],
     libraryHeading: "A cosa serve la libreria",
