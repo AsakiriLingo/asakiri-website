@@ -20,7 +20,7 @@ export const partners = [
   logo: string;
 }>;
 
-export const studioVersion = "0.4.0";
+export const studioVersion = "0.4.1";
 
 const studioReleaseAssets = `${githubUrl}/releases/download/v${studioVersion}`;
 
