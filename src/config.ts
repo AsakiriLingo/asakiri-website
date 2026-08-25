@@ -1,8 +1,6 @@
 export const githubUrl = "https://github.com/AsakiriLingo/asakiri-studio";
 export const docsUrl = "https://docs.asakiri.com";
 
-// Companies that support Asakiri through their open-source programs.
-// Drop a logo in /public and add an entry to show it on the Sponsor page.
 export const partners = [
   {
     name: "Lokalise",
@@ -20,7 +18,7 @@ export const partners = [
   logo: string;
 }>;
 
-export const studioVersion = "0.4.1";
+export const studioVersion = "0.4.3";
 
 const studioReleaseAssets = `${githubUrl}/releases/download/v${studioVersion}`;
 
