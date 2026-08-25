@@ -41,6 +41,51 @@ export const itMessages = {
   termsLink: "Termini",
   legalLabel: "Note legali",
   footer: "Il futuro aperto dell'apprendimento delle lingue.",
+  home: {
+    leadHeading: "Un unico posto per costruire un corso che valga la pena seguire",
+    leadBody:
+      "Asakiri Studio è un editor gratuito e local-first per corsi di lingua. Insegna con lezioni strutturate, una libreria di contenuti riutilizzabile, media ricchi ed esercizi che si correggono da soli. Gira sulla tua macchina, e tutto ciò che crei viene salvato come semplici file che restano tuoi.",
+    featuresHeading: "Cosa puoi costruire",
+    features: [
+      {
+        title: "Lezioni strutturate",
+        body: "Raggruppa le lezioni in unità e componi ognuna con testo formattato, media ed esercizi, con un'anteprima dello studente in tempo reale accanto a te mentre scrivi.",
+      },
+      {
+        title: "Una libreria riutilizzabile",
+        body: "Tieni ogni parola, frase e nota in un unico posto. Le lezioni e gli esercizi puntano a essa, così correggere una voce una volta la corregge ovunque venga usata.",
+      },
+      {
+        title: "Esercizi che si correggono da soli",
+        body: "Scelta multipla, ascolto, abbinamento, ordine delle parole e altro. Ognuno legge la propria risposta direttamente dalla tua libreria, così contenuto e correzione non si disallineano mai.",
+      },
+      {
+        title: "In locale e offline",
+        body: "Il tuo corso vive in una cartella sul tuo computer, media inclusi. Nessun account, nessun cloud e nessuna connessione necessaria per lavorarci.",
+      },
+    ],
+    ownershipHeading: "I tuoi corsi sono tuoi",
+    ownershipBody:
+      "Un corso non è rinchiuso dentro Asakiri. È una cartella di piccoli file documentati in un formato aperto, così il tuo lavoro resta trasferibile, leggibile e indipendente da qualsiasi singolo strumento o azienda.",
+    ownershipPoints: [
+      {
+        title: "Un formato aperto e documentato",
+        body: "Ogni corso è semplice JSON in un formato pubblicato e con versioni, corredato di schemi aperti. Qualsiasi editor, validatore o app per chi impara può leggerlo, oggi o tra molti anni.",
+      },
+      {
+        title: "La licenza la scegli tu",
+        body: "I diritti su ciò che scrivi restano tuoi. Concedi in licenza il tuo corso come preferisci, da tutti i diritti riservati al pienamente aperto, e cambia idea in seguito.",
+      },
+      {
+        title: "Condividilo come preferisci",
+        body: "Invia la cartella, mettila in un repository, consegnala a un collega o pubblicala. Non c'è nessuna piattaforma nel mezzo e nessun custode che decide chi può usarla.",
+      },
+      {
+        title: "Nessun vincolo",
+        body: "Studio è open source sotto licenza MPL-2.0 e gli schemi del formato sono Apache-2.0. Se Asakiri sparisse domani, i tuoi corsi si aprirebbero comunque e resterebbero tuoi.",
+      },
+    ],
+  },
   howItWorks: {
     seo: {
       title: "Come funziona | Asakiri Studio",
@@ -49,33 +94,33 @@ export const itMessages = {
     },
     label: "Asakiri Studio",
     title: "Come nasce un corso",
-    lede: "In Asakiri costruisci un corso in un ordine preciso. Riempi una libreria con le parole e le frasi che insegni, aggiungi l'audio e le immagini, imposta le lezioni e scrivi le parti e gli esercizi che attingono a tutto questo. Ogni passo alimenta il successivo.",
-    stepsHeading: "I quattro passi",
+    lede: "Un corso in Asakiri è un insieme di lezioni che attingono tutte a un'unica libreria condivisa di ciò che insegni. Non c'è un ordine prestabilito in cui lavorare. Riempi prima la libreria, se preferisci, oppure inizia una lezione e aggiungi parole, media ed esercizi man mano. In entrambi i casi, le lezioni e gli esercizi puntano alla stessa libreria invece di conservarne copie proprie.",
+    stepsHeading: "Le quattro parti di Studio",
     steps: [
       {
-        title: "Prima costruisci la libreria",
-        body: "Prima di scrivere una lezione, raccogli ciò che il corso insegna. Vocaboli, frasi, note di grammatica, ognuno nella propria collezione. Una collezione è una tabella che progetti tu, e ogni voce è una riga con i campi che scegli, come una parola, la sua traduzione e una clip audio.",
+        title: "Una libreria di ciò che insegni",
+        body: "Tutto ciò che un corso insegna vive nella libreria: vocaboli, frasi, note di grammatica, ognuno nella propria collezione. Una collezione è una tabella che progetti tu, e ogni voce è una riga con i campi che scegli, come una parola, la sua traduzione e una clip audio. Costruiscila in anticipo, oppure aggiungi contenuti dall'interno di qualsiasi lezione.",
         image: "/mocks/studio-content-library.webp",
         imageAlt:
           "La libreria di Asakiri Studio con voci di vocabolario italiano, immagini ed etichette.",
       },
       {
-        title: "Porta dentro i media",
-        body: "Registra il tuo audio, prendi foto da Unsplash e frasi da Tatoeba, oppure importa file che hai già. Ogni risorsa resta nella cartella del progetto, così il corso funziona offline e viaggia con te.",
+        title: "I media conservati nel tuo progetto",
+        body: "Registra il tuo audio, prendi foto da Unsplash e frasi da Tatoeba, oppure importa file che hai già. Ogni risorsa resta nella cartella del progetto, così il corso funziona offline e viaggia con te. Aggiungi i media in un'area dedicata, oppure nel momento in cui una lezione o una voce ne ha bisogno.",
         image: "/mocks/studio-media-library.webp",
         imageAlt:
           "La libreria multimediale di Asakiri Studio con foto e clip audio e un menu per aggiungere media aperto.",
       },
       {
-        title: "Imposta e scrivi le lezioni",
-        body: "Raggruppa le lezioni in unità e disponi le parti di ogni lezione nella struttura, poi scrivi ogni parte accanto a un'anteprima dello studente in tempo reale. Le parti sono testo formattato, media o esercizi, e inserisci le voci della libreria invece di ridigitare una parola che hai già.",
+        title: "Lezioni fatte di parti",
+        body: "Raggruppa le lezioni in unità e disponi le parti di ogni lezione nella struttura, poi scrivi ogni parte accanto a un'anteprima dello studente in tempo reale. Una parte è testo formattato, media o un esercizio, e inserisci le voci della libreria invece di ridigitare una parola che hai già.",
         image: "/mocks/studio-lesson-editor.webp",
         imageAlt:
           "L'editor delle lezioni di Asakiri Studio: la struttura del corso con unità e lezioni a sinistra, una parte di testo formattato al centro e un'anteprima dello studente in tempo reale a destra.",
       },
       {
-        title: "Aggiungi esercizi che si correggono da soli",
-        body: "Scelta multipla, ascolto, abbinamento, ordine delle parole e altro. Ogni esercizio legge dalle voci della tua libreria, così la chiave di correzione è la voce stessa. Correggi la voce e l'esercizio resta giusto.",
+        title: "Esercizi che si correggono da soli",
+        body: "Scelta multipla, ascolto, abbinamento, ordine delle parole e altro. Ogni esercizio legge la propria risposta dalle voci della tua libreria, così la voce è la chiave di correzione. Correggi la voce e ogni esercizio che la usa resta giusto.",
         image: "/mocks/studio-exercise-editor.webp",
         imageAlt:
           "Un esercizio di abbinamento in fase di modifica in Asakiri Studio, con voci italiane e inglesi abbinate e un'anteprima in tempo reale.",
@@ -102,7 +147,7 @@ export const itMessages = {
       },
     ],
     ctaHeading: "Creane uno tu",
-    ctaBody: "Studio è gratuito e gira sulla tua macchina. Scaricalo e parti dalla libreria, oppure leggi come si incastrano i pezzi nella documentazione.",
+    ctaBody: "Studio è gratuito e gira sulla tua macchina. Scaricalo e parti da dove preferisci, oppure leggi come si incastrano i pezzi nella documentazione.",
     ctaDownload: "Scarica Studio",
     ctaDocs: "Leggi la documentazione",
   },

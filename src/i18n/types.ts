@@ -201,6 +201,21 @@ export interface HowItWorksContent {
   ctaDocs: string;
 }
 
+export interface HomePoint {
+  title: string;
+  body: string;
+}
+
+export interface HomeContent {
+  leadHeading: string;
+  leadBody: string;
+  featuresHeading: string;
+  features: HomePoint[];
+  ownershipHeading: string;
+  ownershipBody: string;
+  ownershipPoints: HomePoint[];
+}
+
 export interface LandingMessages {
   seo: {
     title: string;
@@ -242,6 +257,7 @@ export interface LandingMessages {
   termsLink: string;
   legalLabel: string;
   footer: string;
+  home?: HomeContent;
   howItWorks: HowItWorksContent;
   about: AboutContent;
   mission: StatementContent;

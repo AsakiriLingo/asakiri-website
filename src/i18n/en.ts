@@ -41,6 +41,51 @@ export const enMessages = {
   termsLink: "Terms",
   legalLabel: "Legal",
   footer: "The open future of language learning.",
+  home: {
+    leadHeading: "One place to build a course worth learning from",
+    leadBody:
+      "Asakiri Studio is a free, local-first editor for language courses. Teach with structured lessons, a reusable content library, rich media, and exercises that grade themselves. It runs on your own machine, and everything you make is saved as plain files you keep.",
+    featuresHeading: "What you can build",
+    features: [
+      {
+        title: "Structured lessons",
+        body: "Group lessons into units and lay out each one from rich text, media, and exercises, with a live learner preview beside you as you write.",
+      },
+      {
+        title: "A reusable library",
+        body: "Keep every word, phrase, and note in one place. Lessons and exercises point at it, so fixing an entry once fixes it everywhere it is used.",
+      },
+      {
+        title: "Self-grading exercises",
+        body: "Multiple choice, listening, matching, word order, and more. Each reads its answer straight from your library, so content and grading never drift apart.",
+      },
+      {
+        title: "Local and offline",
+        body: "Your course lives in a folder on your computer, media included. No account, no cloud, and no connection needed to work on it.",
+      },
+    ],
+    ownershipHeading: "Your courses are yours",
+    ownershipBody:
+      "A course is not locked inside Asakiri. It is a folder of small, documented files in an open format, so your work stays portable, readable, and independent of any one tool or company.",
+    ownershipPoints: [
+      {
+        title: "An open, documented format",
+        body: "Every course is plain JSON in a published, versioned format with open schemas. Any editor, validator, or learner app can read it, today or years from now.",
+      },
+      {
+        title: "You choose the license",
+        body: "You hold the rights to what you write. License your course however you want, from all rights reserved to fully open, and change your mind later.",
+      },
+      {
+        title: "Share it any way you like",
+        body: "Send the folder, put it in a repository, hand it to a colleague, or publish it. There is no platform in the middle and no gatekeeper deciding who may use it.",
+      },
+      {
+        title: "No lock-in",
+        body: "Studio is open source under MPL-2.0 and the format schemas are Apache-2.0. If Asakiri went away tomorrow, your courses would still open and still be yours.",
+      },
+    ],
+  },
   howItWorks: {
     seo: {
       title: "How it works | Asakiri Studio",
@@ -49,33 +94,33 @@ export const enMessages = {
     },
     label: "Asakiri Studio",
     title: "How a course comes together",
-    lede: "You build a course in Asakiri in a set order. Fill a library with the words and phrases you teach, add the audio and images, lay out the lessons, then write parts and exercises that draw from all of it. Each step feeds the next.",
-    stepsHeading: "The four steps",
+    lede: "A course in Asakiri is a set of lessons that all draw from one shared library of what you teach. There is no fixed order to work in. Fill the library first if you like, or start a lesson and add words, media, and exercises as you go. Either way, lessons and exercises point back at the same library instead of keeping their own copies.",
+    stepsHeading: "The four parts of Studio",
     steps: [
       {
-        title: "Build the library first",
-        body: "Before writing a lesson, collect what the course teaches. Vocabulary, phrases, grammar notes, each in its own collection. A collection is a table you design, and every entry is a row with the fields you pick, like a word, its translation, and a sound clip.",
+        title: "A library of what you teach",
+        body: "Everything a course teaches lives in the library: vocabulary, phrases, grammar notes, each in its own collection. A collection is a table you design, and every entry is a row with the fields you choose, like a word, its translation, and a sound clip. Build it up front, or add to it from inside any lesson.",
         image: "/mocks/studio-content-library.webp",
         imageAlt:
           "The Asakiri Studio library listing Italian vocabulary entries with images and tags.",
       },
       {
-        title: "Bring in the media",
-        body: "Record your own audio, pull photos from Unsplash and sentences from Tatoeba, or import files you already have. Every asset stays in your project folder, so the course works offline and travels with you.",
+        title: "Media kept in your project",
+        body: "Record your own audio, pull photos from Unsplash and sentences from Tatoeba, or import files you already have. Every asset stays in your project folder, so the course works offline and travels with you. Add media in its own area, or the moment a lesson or an entry needs it.",
         image: "/mocks/studio-media-library.webp",
         imageAlt:
           "The Asakiri Studio media library with photos and audio clips and an add media menu open.",
       },
       {
-        title: "Lay out and write the lessons",
-        body: "Group lessons into units and arrange each lesson's parts in the outline, then write every part against a live learner preview. Parts are rich text, media, or exercises, and you drop in library entries instead of retyping a word you already have.",
+        title: "Lessons made of parts",
+        body: "Group lessons into units and arrange each lesson's parts in the outline, then write every part against a live learner preview. A part is rich text, media, or an exercise, and you drop in library entries instead of retyping a word you already have.",
         image: "/mocks/studio-lesson-editor.webp",
         imageAlt:
           "The Asakiri Studio lesson editor: a course outline of units and lessons on the left, a rich text part in the center, and a live learner preview on the right.",
       },
       {
-        title: "Add exercises that grade themselves",
-        body: "Multiple choice, listening, matching, word order, and more. Each exercise reads from your library entries, so the answer key is the entry itself. Fix the entry and the exercise stays correct.",
+        title: "Exercises that grade themselves",
+        body: "Multiple choice, listening, matching, word order, and more. Each exercise reads its answer from your library entries, so the entry is the answer key. Fix the entry and every exercise using it stays correct.",
         image: "/mocks/studio-exercise-editor.webp",
         imageAlt:
           "A match-pairs exercise being edited in Asakiri Studio, with paired Italian and English entries and a live preview.",
@@ -102,7 +147,7 @@ export const enMessages = {
       },
     ],
     ctaHeading: "Build one yourself",
-    ctaBody: "Studio is free and runs on your own machine. Download it and start with a library, or read how the pieces fit together in the docs.",
+    ctaBody: "Studio is free and runs on your own machine. Download it and start wherever you like, or read how the pieces fit together in the docs.",
     ctaDownload: "Download Studio",
     ctaDocs: "Read the docs",
   },

@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { locale, messages } = Astro.props;
+const home = messages.home;
 ---
 
 <BaseLayout locale={locale} messages={messages} page="home" seo={messages.seo}>
@@ -39,7 +40,143 @@ const { locale, messages } = Astro.props;
 			</div>
 		</div>
 	</section>
+
+	{home && (
+		<div class="home-more">
+			<section class="home-lead" aria-labelledby="home-lead-title">
+				<h2 id="home-lead-title">{home.leadHeading}</h2>
+				<p class="home-lead-body">{home.leadBody}</p>
+			</section>
+
+			<section class="home-block" aria-labelledby="home-features-title">
+				<h2 id="home-features-title" class="home-block-title">{home.featuresHeading}</h2>
+				<ul class="home-grid" role="list">
+					{home.features.map((feature) => (
+						<li class="home-card">
+							<h3 class="home-card-title">{feature.title}</h3>
+							<p class="home-card-body">{feature.body}</p>
+						</li>
+					))}
+				</ul>
+			</section>
+
+			<section class="home-own" aria-labelledby="home-own-title">
+				<div class="home-own-head">
+					<h2 id="home-own-title" class="home-block-title">{home.ownershipHeading}</h2>
+					<p class="home-own-body">{home.ownershipBody}</p>
+				</div>
+				<ul class="home-grid" role="list">
+					{home.ownershipPoints.map((point) => (
+						<li class="home-card home-card--own">
+							<h3 class="home-card-title">{point.title}</h3>
+							<p class="home-card-body">{point.body}</p>
+						</li>
+					))}
+				</ul>
+			</section>
+		</div>
+	)}
 </BaseLayout>
+
+<style>
+	.home-more {
+		width: min(100%, var(--content-max));
+		margin-inline: auto;
+		padding-block: var(--space-3xl) var(--space-4xl);
+		padding-inline-start: max(var(--page-gutter), env(safe-area-inset-left));
+		padding-inline-end: max(var(--page-gutter), env(safe-area-inset-right));
+		display: grid;
+		gap: var(--space-4xl);
+	}
+
+	.home-lead h2,
+	.home-block-title {
+		margin: 0;
+		font-family: var(--font-display);
+		font-size: clamp(1.6rem, 3vw, 2.25rem);
+		font-weight: 400;
+		letter-spacing: -0.02em;
+		line-height: 1.1;
+		text-wrap: balance;
+		max-width: 20ch;
+	}
+
+	.home-lead h2 {
+		max-width: 22ch;
+	}
+
+	.home-lead-body {
+		margin: var(--space-lg) 0 0;
+		max-width: var(--measure-body);
+		font-family: var(--font-display);
+		font-size: clamp(var(--text-md), 2vw, var(--text-lg));
+		font-weight: 400;
+		line-height: 1.5;
+		text-wrap: pretty;
+	}
+
+	.home-grid {
+		display: grid;
+		gap: var(--space-lg);
+		margin: var(--space-2xl) 0 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	.home-card {
+		margin: 0;
+		max-width: 52ch;
+	}
+
+	.home-card-title {
+		margin: 0;
+		font-size: var(--text-md);
+		font-weight: 600;
+		letter-spacing: -0.01em;
+		line-height: 1.25;
+	}
+
+	.home-card-body {
+		margin: var(--space-xs) 0 0;
+		color: var(--color-ink-2);
+		font-size: var(--text-base);
+		line-height: 1.65;
+		text-wrap: pretty;
+	}
+
+	.home-own {
+		padding-block: var(--space-2xl) 0;
+		border-block-start: var(--rule-thin) solid var(--color-rule);
+	}
+
+	.home-own-head {
+		max-width: var(--measure-body);
+	}
+
+	.home-own-body {
+		margin: var(--space-lg) 0 0;
+		font-family: var(--font-display);
+		font-size: clamp(var(--text-md), 2vw, var(--text-lg));
+		font-weight: 400;
+		line-height: 1.5;
+		text-wrap: pretty;
+	}
+
+	.home-card--own {
+		padding: var(--space-lg);
+		border: var(--rule-thin) solid var(--color-rule);
+		border-radius: var(--radius-mark);
+		background: var(--color-paper-2);
+		max-width: none;
+	}
+
+	@media (min-width: 48rem) {
+		.home-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: var(--space-2xl);
+		}
+	}
+</style>
 
 <script>
 	const closeMenus = (except) => {

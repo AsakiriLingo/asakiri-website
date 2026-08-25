@@ -30,7 +30,7 @@ const homeUrl = locale === "en" ? "/" : `/${locale}/`;
 		<section class="howto-section" aria-labelledby="howto-steps">
 			<h2 id="howto-steps">{howItWorks.stepsHeading}</h2>
 			<ol class="howto-steps" role="list">
-				{howItWorks.steps.map((step, index) => (
+				{howItWorks.steps.map((step) => (
 					<li class="howto-step">
 						<figure class="howto-figure">
 							<img
@@ -44,8 +44,7 @@ const homeUrl = locale === "en" ? "/" : `/${locale}/`;
 							/>
 						</figure>
 						<div class="howto-step-text">
-							<p class="howto-step-index" aria-hidden="true">{index + 1}</p>
-							<h3 class="howto-step-title">{step.title}</h3>
+														<h3 class="howto-step-title">{step.title}</h3>
 							<p class="howto-step-body">{step.body}</p>
 						</div>
 					</li>
@@ -168,21 +167,6 @@ const homeUrl = locale === "en" ? "/" : `/${locale}/`;
 		object-position: top center;
 		border: var(--rule-thin) solid var(--color-rule);
 		border-radius: var(--radius-mark);
-	}
-
-	.howto-step-index {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		width: 2.25rem;
-		height: 2.25rem;
-		margin: 0 0 var(--space-md);
-		border-radius: 999px;
-		background: var(--color-brand);
-		color: var(--color-brand-ink);
-		font-family: var(--font-display);
-		font-size: var(--text-md);
-		line-height: 1;
 	}
 
 	.howto-step-title {
